@@ -1,0 +1,24 @@
+body {
+    direction: rtl;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url("../fonts/Almarai-Regular.ttf");
+}
+
+body {
+    font-family: 'Almarai' !important;
+}
+
+.p-dialog {
+    max-height: initial !important;
+}
+
+.p-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: end !important;
+    flex-shrink: 0;
+    padding: var(--p-dialog-header-padding);
+}
