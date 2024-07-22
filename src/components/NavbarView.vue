@@ -21,7 +21,6 @@
         ><button><i class="fa-solid fa-magnifying-glass"></i></button
       ></a>
     </div>
-
     <div class="leftt">
       <a href=""
         ><i
