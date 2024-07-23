@@ -539,7 +539,7 @@ h4 {
   border: 1px solid white;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-
+  font-size: 20px;
   position: absolute;
   top: 0;
   right: 0;
@@ -561,7 +561,7 @@ img {
   border: 1px solid rgba(217, 217, 217, 1);
   padding: 16px;
   width: 22%;
-  border-radius: 15px;
+  border-radius: 20px;
   position: relative;
 }
 button {

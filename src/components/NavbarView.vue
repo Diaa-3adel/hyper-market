@@ -1,7 +1,7 @@
 <template>
   <div class="subNav">
     <div class="right">
-      <h2>dasdasd إلي <a href="">حدد موقعك</a></h2>
+      <h2>التوصيــل إلي <a href="">حدد موقعك</a></h2>
     </div>
     <div class="left" style="margin-top: 10px">
       <a href=""
