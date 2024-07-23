@@ -22,3 +22,8 @@ body {
     flex-shrink: 0;
     padding: var(--p-dialog-header-padding);
 }
+
+.p-button-text.p-button-secondary{
+    padding: 5px;
+    border: 1px solid black;
+}

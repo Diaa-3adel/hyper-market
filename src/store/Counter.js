@@ -1,19 +1,21 @@
 import { defineStore } from 'pinia';
 
-export const useCounterStore = defineStore('counter', {
+export const useCounterStore = defineStore('useCounterStore', {
     state: () => ({
-        count: 0
+        cartItem: [],
+        count: 0,
+        items: [],
     }),
     actions: {
-        
-        increment() {
-            this.count++;
 
-            // console.log(this.count);
+        addItem(item) {
+            this.cartItem.push(item);
+            localStorage.setItem('cartItem', JSON.stringify(this.cartItem));
+            console.log(this.cartItem);
         },
-
-        decrement() {
-            this.count--;
-        }
+        getItems() {
+            this.items = JSON.parse(localStorage.getItem('cartItem'));
+            console.log(this.items);
+        },
     }
 });
