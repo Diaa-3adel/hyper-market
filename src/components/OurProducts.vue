@@ -6,11 +6,11 @@
       <h2>دينا فارم</h2>
       <img src="../assets/bc599f468ec1cfb6da1d0fd808601971.png" alt="" />
       <div class="price">
-        <h5>48.30 ر.س</h5>
-        <p>40.30 ر.س</p>
+        <h5 class="text-muted" >  </h5>
+          <p>40.30 ر.س</p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -32,13 +32,13 @@
       <h2>دينا فارم</h2>
       <img src="../assets/4c0fa2636ce2d86369426687cf0748a2.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p>40.30 ر.س</p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -60,7 +60,7 @@
 
       <img src="../assets/bc599f468ec1cfb6da1d0fd808601971.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -73,8 +73,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -96,7 +96,7 @@
 
       <img src="../assets/4c0fa2636ce2d86369426687cf0748a2.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -109,8 +109,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -133,7 +133,7 @@
 
       <img src="../assets/bc599f468ec1cfb6da1d0fd808601971.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -146,8 +146,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -169,7 +169,7 @@
 
       <img src="../assets/bc599f468ec1cfb6da1d0fd808601971.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -182,8 +182,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -203,7 +203,7 @@
 
       <img src="../assets/4c0fa2636ce2d86369426687cf0748a2.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -216,8 +216,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -239,7 +239,7 @@
 
       <img src="../assets/d7830e58ce778a09602d39ca31aa2b87.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -252,8 +252,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -275,7 +275,7 @@
 
       <img src="../assets/4c0fa2636ce2d86369426687cf0748a2.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -288,8 +288,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -311,7 +311,7 @@
 
       <img src="../assets/a83fca5597429dae25d4c7965ebc50b2.gif" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -324,8 +324,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -346,7 +346,7 @@
 
       <img src="../assets/bc599f468ec1cfb6da1d0fd808601971.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -359,8 +359,8 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
-          class="fa-solid fa-star"
+        style="color: gold; position: relative; top: 10px; right: 125px"
+        class="fa-solid fa-star"
           >4.0</i
         >
       </div>
@@ -382,7 +382,7 @@
 
       <img src="../assets/bc599f468ec1cfb6da1d0fd808601971.png" alt="" />
       <div class="price">
-        <h5 style="font-weight: bold; text-decoration: line-through">
+        <h5 class="text-muted" >
           48.30 ر.س
         </h5>
         <p
@@ -395,7 +395,7 @@
           40.30 ر.س
         </p>
         <i
-          style="color: gold; position: relative; top: 21px; right: 115px"
+          style="color: gold; position: relative; top: 10px; right: 125px"
           class="fa-solid fa-star"
           >4.0</i
         >
@@ -408,11 +408,19 @@
         سكر عضوي مجمد
       </p>
 
-      <button type="button" @click="increment">
-        <i style="margin-left: 10px" class="fa-solid fa-cart-shopping"></i>
-        أضف الى السلة
-      </button>
+      <button type="button">
+        <i @click="increment" style="background-color: rgba(164, 202, 114, 1); color: white; padding: 3px; margin-left: 8px; border: 1px solid white; border-radius: 50px;" class="fa-solid fa-plus"></i>
+
+        <i  class="fa-solid fa-cart-shopping"></i>
+        أضف الى السلة ( {{ count }} )
+
      
+          
+          <i style="padding: 3px; margin-right: 8px; border: 1px solid red; background-color: red; border-radius: 50px ; color: white;  " @click="decrement" class="fa-solid fa-minus"></i>
+       
+    
+      </button>
+
       <!-- <Dialog
         style="background-color: white"
         v-model:visible="visible"
@@ -504,7 +512,7 @@ export default {
     ...mapState(useCounterStore, ["count"]),
   },
   methods: {
-    ...mapActions(useCounterStore, ["increment"]),
+    ...mapActions(useCounterStore, ["increment", "decrement"]),
   },
 };
 </script>
@@ -539,7 +547,7 @@ h4 {
   border: 1px solid white;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-
+font-size: 22px;
   position: absolute;
   top: 0;
   right: 0;
@@ -561,10 +569,10 @@ img {
   border: 1px solid rgba(217, 217, 217, 1);
   padding: 16px;
   width: 22%;
-  border-radius: 15px;
+  border-radius: 23px;
   position: relative;
 }
-button {
+.iteem button {
   padding: 15px;
   border-color: rgba(164, 202, 114, 1);
   padding-left: 20%;
@@ -573,7 +581,7 @@ button {
   margin-top: 13px;
   background-color: white;
   color: rgba(164, 202, 114, 1);
-  font-size: 24px;
+  font-size: 16px;
 }
 .price {
   display: flex;
@@ -585,7 +593,7 @@ h3 {
   font-size: 22px;
 }
 h5 {
-  font-weight: bold;
+  
   text-decoration: line-through;
 }
 .price p {
