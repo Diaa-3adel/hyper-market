@@ -22,7 +22,7 @@
       <h3 style="text-align: right">{{ item.description }}</h3>
       <p style="font-size: 17px; text-align: right">{{ item.details }}</p>
 
-      <button type="button" @click="addItem(item)">
+      <button type="button"  @click="addItem(item);showAlert()">
         <i class="fa-solid fa-cart-shopping"></i>
         أضف الى السلة 
       </button>
@@ -134,6 +134,8 @@ import "primeicons/primeicons.css";
 import { useCounterStore } from "@/store/Counter";
 
 import { mapActions, mapState } from "pinia";
+import Swal from "sweetalert2";
+
 export default {
   data() {
     return {
@@ -340,6 +342,16 @@ export default {
     ...mapState(useCounterStore, ["addItem"]),
   },
   methods: {
+    showAlert(){
+      Swal.fire({
+  position: "top-center",
+  icon: "success",
+  title: "Your Product Has Been Added To Cart",
+  showConfirmButton: false,
+  timer: 1500,
+  width: 600,
+});
+    },
     increment(index) {
       this.items[index].count++;
     },

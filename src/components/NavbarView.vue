@@ -36,8 +36,7 @@
         "
         style="border-right: 1px solid black"
       >
-        <i class="fa-solid fa-cart-shopping"></i> السله 
-        ({{ cartItem.length }} )
+        <i class="fa-solid fa-cart-shopping"></i> السله ({{ cartItem.length }} )
       </button>
 
       <Dialog
@@ -49,7 +48,7 @@
           background-color: white;
           box-shadow: 8px 8px 8px rgba(0.2, 0, 0, 0.2);
           border-radius: 15px;
-     
+          height: 950px;
         "
         class="p-3"
       >
@@ -72,9 +71,9 @@
 
         <h2>تفاصيل السعر</h2>
 
-        <div style="display: flex; justify-content: space-between">
+        <div  style="display: flex; justify-content: space-between">
           <h4>سعر المنتجات</h4>
-          <h4>80.65 SAR</h4>
+          <h4>{{ calculateTotal() }} ر.س </h4>
         </div>
 
         <div style="display: flex; justify-content: space-between">
@@ -146,6 +145,11 @@ export default {
       this.position = position;
       this.visible = true;
     },
+    calculateTotal() {
+    const productTotal = this.items.reduce((acc, item) => acc + parseFloat( item.originalPrice) , 0);
+    console.log(productTotal);
+    return productTotal;
+  },
     addProduct() {
       this.type++;
     },

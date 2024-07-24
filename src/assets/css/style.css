@@ -24,6 +24,8 @@ body {
 }
 
 .p-button-text.p-button-secondary{
-    padding: 5px;
-    border: 1px solid black;
+    padding: 2px !important;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    margin-bottom: 5px !important; 
 }

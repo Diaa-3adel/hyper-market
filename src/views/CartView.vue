@@ -33,7 +33,7 @@
               font-size: 20px;
             "
           >
-            كل المنتجات ({{  cartItem.length  }})
+            كل المنتجات ({{ cartItem.length }})
           </h2>
 
           <div v-for="item in items" :key="item.id" class="cards">
@@ -41,10 +41,17 @@
             <div
               style="display: flex; flex-direction: column; margin-left: 30%"
             >
-              <h2 style="text-align: right;  font-size: 25px">
+              <h2 style="text-align: right; font-size: 25px">
                 {{ item.description }}
               </h2>
-              <h2 style="font-size: 20px; color:  #a4ca72; font-weight: bold; text-align: right">
+              <h2
+                style="
+                  font-size: 20px;
+                  color: #a4ca72;
+                  font-weight: bold;
+                  text-align: right;
+                "
+              >
                 {{ item.originalPrice }}
               </h2>
             </div>
@@ -52,17 +59,17 @@
             <h2 style="font-size: 20px">
               المجموع 80.30 ر.س
               <a
-                href="#"
+                href=""
                 style="
                   text-decoration: none;
                   color: white;
                   background-color: rgba(238, 37, 39, 1);
                   border-radius: 60%;
                   padding: 1px 4px;
-                 
+                  
                 "
               >
-              <i class="fa-solid fa-xmark"></i>
+                <i @click="Delete(index)" class="fa-solid fa-xmark"></i>
               </a>
             </h2>
           </div>
@@ -108,23 +115,23 @@
 
           <div class="total" style="margin-top: 6%">
             <div style="display: flex; justify-content: space-between">
-              <h3>سعر المنتجات</h3>
-              <h3>80.65 SAR</h3>
+              <h3>سعر المنتجــات</h3>
+              <h3>{{ calculateTotal() }} ر.س</h3>
             </div>
 
             <div style="display: flex; justify-content: space-between">
-              <h3>سعر التوصيل</h3>
-              <h3>20 SAR</h3>
+              <h3>سعر التوصيــل</h3>
+              <h3>{{ delivery }} SAR</h3>
             </div>
 
             <div style="display: flex; justify-content: space-between">
-              <h3>ضريبة</h3>
-              <h3 style="color: red">SAR -5</h3>
+              <h3>ضريبــة</h3>
+              <h3 style="color: red">SAR {{ tax }}</h3>
             </div>
             <hr />
             <div style="display: flex; justify-content: space-between">
-              <h3>اجمالى السعر</h3>
-              <h3 style="font-weight: bold">100.39 SAR</h3>
+              <h3>اجمالـى السعـر</h3>
+              <h3 style="font-weight: bold">{{ calculateAllTotal() }}  SAR</h3>
             </div>
           </div>
 
@@ -142,7 +149,7 @@
 
           <Dialog
             v-model:visible="visible"
-            modal 
+            modal
             style="
               background-color: white;
               box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
@@ -153,22 +160,27 @@
           >
             <h2>تسجيل الدخول</h2>
             <p>من فضلك قمك بتسجيل الدخول لاستكمال عملية الشراء</p>
-            <h2 style="font-size: 15px; font-weight: bold; margin-top: 15px;">
+            <h2 style="font-size: 15px; font-weight: bold; margin-top: 15px">
               رقم الهاتف او البريد الالكترونى
             </h2>
-            <input
-              style="padding: 11px; width: 100%"
-              type="text"
-             
-            />
+            <input style="padding: 11px; width: 100%" type="text" />
             <button style="width: 100%; margin-top: 10px">تسجيل الدخول</button>
             <div style="display: flex">
-              <div style="margin: auto; margin-top: 15px; margin-bottom: 15px" >ليس لديك حســـاب</div>
+              <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
+                ليس لديك حســـاب
+              </div>
             </div>
-            
-              <button style="width: 100%; border: 1px solid #a4ca72; background-color: white; color: #a4ca72;">حســـاب جديد</button>
 
-         
+            <button
+              style="
+                width: 100%;
+                border: 1px solid #a4ca72;
+                background-color: white;
+                color: #a4ca72;
+              "
+            >
+              حســـاب جديد
+            </button>
           </Dialog>
         </div>
       </div>
@@ -187,6 +199,8 @@ export default {
   data() {
     return {
       visible: false,
+      delivery: 20,
+      tax: 5,
     };
   },
   computed: {
@@ -194,6 +208,29 @@ export default {
   },
 
   methods: {
+    Delete(index) {
+      this.items.splice(index, 1);
+      localStorage.cartItem = JSON.stringify(this.items);
+      
+    },
+    calculateTotal() {
+      const productTotal = this.items.reduce(
+        (acc, item) => acc + parseFloat(item.originalPrice),
+        0
+      );
+      const TotalAll = Math.round(productTotal);
+      console.log(productTotal);
+      return TotalAll;
+    },
+    calculateAllTotal() {
+      const productTotal = this.items.reduce(
+        (acc, item) => acc + parseFloat(item.originalPrice),
+        0
+      );
+      const TotalWithAll = Math.round(productTotal + this.delivery + this.tax);
+      return TotalWithAll;
+    },
+
     ...mapActions(useCounterStore, ["getItems"]),
   },
 
@@ -206,8 +243,6 @@ export default {
 
 
 <style scoped>
-
-
 .total h3 {
   font-size: 18px;
   margin-top: 3%;
