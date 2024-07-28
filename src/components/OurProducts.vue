@@ -346,7 +346,7 @@ export default {
       Swal.fire({
   position: "top-center",
   icon: "success",
-  title: "Your Product Has Been Added To Cart",
+  title: "تم اضافة المنتج بنجاح الى سلة التسوق",
   showConfirmButton: false,
   timer: 1500,
   width: 600,
@@ -418,6 +418,8 @@ img {
 }
 .iteem button {
   padding: 15px;
+  border:none;
+  border: 1px solid;
   border-color: rgba(164, 202, 114, 1);
   padding-left: 20%;
   padding-right: 20%;

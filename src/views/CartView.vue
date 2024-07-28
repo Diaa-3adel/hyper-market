@@ -58,19 +58,17 @@
 
             <h2 style="font-size: 20px">
               المجموع 80.30 ر.س
-              <a
-                href=""
+              <span
                 style="
                   text-decoration: none;
                   color: white;
                   background-color: rgba(238, 37, 39, 1);
                   border-radius: 60%;
                   padding: 1px 4px;
-                  
                 "
               >
                 <i @click="Delete(index)" class="fa-solid fa-xmark"></i>
-              </a>
+              </span>
             </h2>
           </div>
           <hr />
@@ -131,7 +129,7 @@
             <hr />
             <div style="display: flex; justify-content: space-between">
               <h3>اجمالـى السعـر</h3>
-              <h3 style="font-weight: bold">{{ calculateAllTotal() }}  SAR</h3>
+              <h3 style="font-weight: bold">{{ calculateAllTotal() }} SAR</h3>
             </div>
           </div>
 
@@ -164,7 +162,64 @@
               رقم الهاتف او البريد الالكترونى
             </h2>
             <input style="padding: 11px; width: 100%" type="text" />
-            <button style="width: 100%; margin-top: 10px">تسجيل الدخول</button>
+            <button
+              @click="showSecondDilog()"
+              style="width: 100%; margin-top: 10px"
+            >
+              تسجيل الدخول
+            </button>
+
+            <Dialog
+              v-model:visible="visible2"
+              modal
+              style="
+                background-color: white;
+                box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+                border-radius: 15px;
+                padding: 25px;
+                width: 30%;
+              "
+            >
+              <h2>تسجيل الدخول</h2>
+              <p>من فضلك قمك بتسجيل الدخول لاستكمال عملية الشراء</p>
+              <h2 style="font-size: 15px; font-weight: bold; margin-top: 15px">
+                كلمــه المرور
+              </h2>
+              <input style="padding: 11px; width: 100%" type="text" />
+              <a
+                style="
+                  text-decoration: none;
+                  color: black;
+                  text-align: left;
+                  margin-top: 10px;
+                  display: block;
+                "
+                href=""
+                >نسيــت كلمــة المرور ؟</a
+              >
+              <button style="width: 100%; margin-top: 10px">
+                تسجيل الدخول
+              </button>
+              <div style="display: flex">
+                <div
+                  style="margin: auto; margin-top: 15px; margin-bottom: 15px"
+                >
+                  ليس لديك حســـاب
+                </div>
+              </div>
+
+              <button
+                style="
+                  width: 100%;
+                  border: 1px solid #a4ca72;
+                  background-color: white;
+                  color: #a4ca72;
+                "
+              >
+                حســـاب جديد
+              </button>
+            </Dialog>
+
             <div style="display: flex">
               <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
                 ليس لديك حســـاب
@@ -199,6 +254,7 @@ export default {
   data() {
     return {
       visible: false,
+      visible2: false,
       delivery: 20,
       tax: 5,
     };
@@ -208,10 +264,14 @@ export default {
   },
 
   methods: {
+    showSecondDilog() {
+      this.visible = false;
+      this.visible2 = true;
+    },
+
     Delete(index) {
       this.items.splice(index, 1);
       localStorage.cartItem = JSON.stringify(this.items);
-      
     },
     calculateTotal() {
       const productTotal = this.items.reduce(

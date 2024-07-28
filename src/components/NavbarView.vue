@@ -83,13 +83,13 @@
 
         <div style="display: flex; justify-content: space-between">
           <h4>خصم</h4>
-          <h4 style="color: red">SAR -5</h4>
+          <h4 style="color: red">SAR {{discount}}</h4>
         </div>
         <hr />
 
         <div style="display: flex; justify-content: space-between">
           <h4>اجمالي السعر</h4>
-          <h4>100.65 SAR</h4>
+          <h4>{{ calculateAllTotal()  }}  ر.س</h4>
         </div>
         <div class="arow">
           <h4>لديك كوبون خصم</h4>
@@ -135,12 +135,22 @@ export default {
     return {
       position: "right",
       visible: false,
+      discount : -5
     };
   },
   computed: {
     ...mapState(useCounterStore, ["count", "items", "cartItem"]),
   },
   methods: {
+    calculateAllTotal() {
+      const productTotal = this.items.reduce(
+        (acc, item) => acc + parseFloat(item.originalPrice),
+        0
+      );
+      const TotalWithAll = Math.round(productTotal + this.discount );
+      return TotalWithAll;
+    },
+
     openPosition(position) {
       this.position = position;
       this.visible = true;
@@ -227,12 +237,12 @@ h4 {
 }
 
 .right img {
-  width: 10%;
-  margin-left: 6%;
+  width: 8%;
+  margin-left: 2%;
 }
 
 .nav input {
-  width: 100%;
+  width: 850px;
   height: 50px;
   border-radius: 10px;
   background-color: #f5f5f5;
@@ -243,9 +253,9 @@ h4 {
 .right button {
   background-color: #a4ca72;
   color: white;
-  margin-top: 20px;
-  width: 45px;
-  height: 45px;
+  margin-top: 30px;
+  width: 50px;
+  height: 50px;
   border: none;
   border-radius: 10px;
 }
@@ -254,8 +264,8 @@ h4 {
   display: flex;
   justify-content: space-between;
 
-  margin-right: 2%;
-  padding-right: 3%;
+  /* margin-right: 2%; */
+  padding-right: 0%;
 }
 .leftt {
   margin-top: 2%;

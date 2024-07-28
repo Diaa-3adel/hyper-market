@@ -2,10 +2,16 @@ body {
     direction: rtl;
 }
 
+
 @font-face {
-    font-family: 'Almarai';
+    font-family: "Almarai";
     src: url("../fonts/Almarai-Regular.ttf");
 }
+
+/* @font-face {
+    font-family: 'Zain';
+    src: url('../fonts/Zain-Regular.ttf');
+} */
 
 body {
     font-family: 'Almarai' !important;
@@ -23,9 +29,13 @@ body {
     padding: var(--p-dialog-header-padding);
 }
 
-.p-button-text.p-button-secondary{
-    padding: 2px !important;
+.p-button-text.p-button-secondary {
+    padding: 11px !important;
     border: 1px solid black !important;
     border-radius: 50% !important;
-    margin-bottom: 5px !important; 
+    margin-bottom: 5px !important;
+}
+
+.p-accordioncontent-content{
+    border-style: none;
 }

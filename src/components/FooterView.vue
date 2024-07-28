@@ -40,12 +40,12 @@
 
         <div class="col-md-3">
           <h3>روابط سريعه</h3>
-          <a href="">سياسة الخصوصية والاستخدام</a>
-          <a href="">سياسة الاسترجاع</a>
-          <a href="">قصتنا</a>
-          <a href="">المدونة</a>
-          <a href="">تواصل معنا</a>
-          <a href="">الأسألة الشائعة</a>
+          <router-link to="/OurPrivacyView">سياسة الخصوصية والاستخدام</router-link>
+          <router-link to="/OurRolesView">سياسة الاسترجاع</router-link>
+          <router-link to="/OurStoriesView">قصتنا</router-link>
+          <router-link to="/MdowanaView">المدونة</router-link>
+          <router-link to="/ContactUsView">تواصل معنا</router-link>
+          <router-link to="/QuestionView">الأسألة الشائعة</router-link>
         </div>
 
         <div class="col-md-3 icon" style="margin-top: 7px">
