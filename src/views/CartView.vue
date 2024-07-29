@@ -41,7 +41,7 @@
             <div
               style="display: flex; flex-direction: column; margin-left: 30%"
             >
-              <h2 style="text-align: right; font-size: 25px">
+              <h2 style="text-align: right; font-size: 21px">
                 {{ item.description }}
               </h2>
               <h2
@@ -56,7 +56,7 @@
               </h2>
             </div>
 
-            <h2 style="font-size: 20px">
+            <h2 style="font-size: 18px">
               المجموع 80.30 ر.س
               <span
                 style="
@@ -72,35 +72,7 @@
             </h2>
           </div>
           <hr />
-          <!-- <div class="cards">
-            <img :src="item.image"  alt="" />
-            <div
-              style="display: flex; flex-direction: column; margin-left: 30%"
-            >
-              <h2 style="text-align: right; font-size: 20px">
-                كرتونة من المانجو معبأة بطريقة صحيحة للحفاظ عليها
-              </h2>
-              <h2 style="font-size: 20px; font-weight: bold; text-align: right">
-                50.12 ر.س
-              </h2>
-            </div>
-
-            <h2 style="font-size: 20px">
-              المجموع 80.30 ر.س
-              <a
-                href="#"
-                style="
-                  text-decoration: none;
-                  color: white;
-                  background-color: red;
-                  border-radius: 60%;
-                  padding: 2px 8px;
-                "
-              >
-                x
-              </a>
-            </h2>
-          </div> -->
+          
         </div>
 
         <div class="col-md-3 bg-white p-4 rounded">
@@ -169,10 +141,43 @@
               تسجيل الدخول
             </button>
 
-            <Dialog
+            
+
+            <div style="display: flex">
+              <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
+                ليس لديك حســـاب
+              </div>
+            </div>
+
+
+            <router-link to="/RegisterView"> 
+             
+            <button
+            
+              style="
+                width: 100%;
+                border: 1px solid #a4ca72;
+                background-color: white;
+                color: #a4ca72;
+                
+              "
+            >
+              حســـاب جديد
+            </button>
+          </router-link>
+          </Dialog>
+
+       
+<!-- =============== -->
+
+
+
+
+          <Dialog
               v-model:visible="visible2"
               modal
               style="
+              width: 100%;
                 background-color: white;
                 box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
                 border-radius: 15px;
@@ -186,16 +191,16 @@
                 كلمــه المرور
               </h2>
               <input style="padding: 11px; width: 100%" type="text" />
-              <a
+              
+              <button @click="visible3 = true; visible2 = false"
                 style="
-                  text-decoration: none;
-                  color: black;
-                  text-align: left;
-                  margin-top: 10px;
-                  display: block;
+                 border: none;
+                 background-color: white;
+                 color: black;
+                margin-right:68%;
                 "
-                href=""
-                >نسيــت كلمــة المرور ؟</a
+              
+                >نسيــت كلمــة المرور ؟</button
               >
               <button style="width: 100%; margin-top: 10px">
                 تسجيل الدخول
@@ -209,6 +214,7 @@
               </div>
 
               <button
+               
                 style="
                   width: 100%;
                   border: 1px solid #a4ca72;
@@ -219,24 +225,94 @@
                 حســـاب جديد
               </button>
             </Dialog>
+            
 
-            <div style="display: flex">
-              <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
-                ليس لديك حســـاب
-              </div>
-            </div>
 
-            <button
+<!-- ==================== -->
+            <Dialog
+              v-model:visible="visible3"
+              modal
               style="
-                width: 100%;
-                border: 1px solid #a4ca72;
                 background-color: white;
-                color: #a4ca72;
+                box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+                border-radius: 15px;
+                padding: 25px;
+                width: 30%;
               "
             >
-              حســـاب جديد
-            </button>
-          </Dialog>
+              <h2 >نسيت كلمة المرور </h2>
+              <p style="font-size: 17px;">ادخل رقم الهاتف او البريد الالكترونى الذي قمت بالتسجيل به لاستقبال كود مكون من 4 ارقام لاعادة كلمة المرور</p>
+           
+              <h2 style="margin: 5% 0;">رقم الهاتف او البريد الالكترونى</h2>
+              <input style="padding: 11px; width: 100%" type="text" />
+              
+       
+              <button   @click="visible4 = true; visible3 = false"
+               style="width: 100%; margin-top: 20px">
+                ارسال الكود
+              </button>
+          
+         
+            </Dialog>
+<!-- =============== -->
+            <Dialog
+              v-model:visible="visible4"
+              modal
+              style="
+                background-color: white;
+                box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+                border-radius: 15px;
+                padding: 25px;
+                width: 30%;
+              "
+            >
+              <h2 >استرجاع كلمة المرور </h2>
+              <p style="font-size: 17px;">ادخل الكود المكون من 4 ارقام المرسل الى someone@gmail.com</p>
+          
+              <div class="card flex justify-center">
+        <InputOtp  v-model="value" />
+    </div>
+              
+              
+              <button   @click="visible5 = true; visible4 = false"
+               style="width: 100%; margin-top: 20px">
+                ارسال الكود
+              </button>
+      
+            </Dialog>
+<!-- =============== -->
+
+            <Dialog
+              v-model:visible="visible5"
+              modal
+              style="
+                background-color: white;
+                box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+                border-radius: 15px;
+                padding: 25px;
+                width: 30%;
+              "
+            >
+              <h2  >كلمة المرور الجديدة   </h2>
+              <p style="font-size: 17px;"> كلمة المرور الجديدة يجب انت تحتوي على الاقل على 8 رموز مكونة من حروف وارقام </p>
+           
+              <h2 style="margin: 3% 0; font-weight: bold; font-size: 1.4rem;"> كلمة المرور</h2>
+              <input style="padding: 11px; width: 100%" type="text" />
+              
+              <h2 style="margin: 3% 0; font-size: 1.4rem; font-weight: bold;"> اعادة كلمة المرور </h2>
+              <input style="padding: 11px; width: 100%" type="text" />
+              
+       
+              <button   
+               style="width: 100%; margin-top: 20px">
+                ارسال الكود
+              </button>
+          
+         
+            </Dialog>
+<!-- =============== -->
+
+
         </div>
       </div>
     </div>
@@ -248,13 +324,21 @@ import Dialog from "primevue/dialog";
 import NavbarView from "@/components/NavbarView.vue";
 import { useCounterStore } from "@/store/Counter";
 import { mapActions, mapState } from "pinia";
+
+import InputOtp from 'primevue/inputotp';
+
 // const useStore = useCounterStore();
 
 export default {
   data() {
     return {
+      value: null,
       visible: false,
       visible2: false,
+      visible3: false,
+      visible4: false,
+      visible5: false,
+      visible6: false,
       delivery: 20,
       tax: 5,
     };
@@ -297,7 +381,7 @@ export default {
   mounted() {
     this.getItems();
   },
-  components: { NavbarView, Dialog },
+  components: { NavbarView, Dialog , InputOtp },
 };
 </script>
 

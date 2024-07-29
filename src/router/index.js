@@ -7,6 +7,7 @@ import OurPrivacyView from '../views/OurPrivacyView.vue'
 import MdowanaView from '../views/MdowanaView.vue'
 import OurRolesView from '../views/OurRolesView.vue'
 import QuestionView from '../views/QuestionView.vue'
+import RegisterView from '../views/RegisterView.vue'
 
 const routes = [
   {
@@ -52,6 +53,12 @@ const routes = [
     path: '/QuestionView',
     name: 'QuestionView',
     component: QuestionView,
+  },
+
+  {
+    path: '/RegisterView',
+    name: 'RegisterView',
+    component: RegisterView,
   },
 
 

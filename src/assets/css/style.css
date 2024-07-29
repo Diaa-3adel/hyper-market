@@ -12,7 +12,9 @@ body {
     font-family: 'Zain';
     src: url('../fonts/Zain-Regular.ttf');
 } */
-
+html {
+    scroll-behavior: smooth;
+  }
 body {
     font-family: 'Almarai' !important;
 }
@@ -38,4 +40,8 @@ body {
 
 .p-accordioncontent-content{
     border-style: none;
+}
+
+.p-button{
+    font-size: 0rem !important;
 }

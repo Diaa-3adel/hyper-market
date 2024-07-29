@@ -24,7 +24,7 @@
     <div class="leftt">
       <a href=""
         ><i
-          style="border: 1px solid black; border-radius: 50px"
+          style="border: 1px solid black; border-radius: 50px; padding: 3px;"
           class="fa-regular fa-user"
         ></i
         >تسجيل الدخول</a
@@ -39,7 +39,11 @@
         <i class="fa-solid fa-cart-shopping"></i> السله ({{ cartItem.length }} )
       </button>
 
+
+     
+
       <Dialog
+      v-if="showDialog"
         v-model:visible="visible"
         :position="position"
         :modal="true"
@@ -116,6 +120,14 @@
         </router-link>
       </Dialog>
 
+
+
+
+
+
+
+
+
       <a style="border-right: 1px solid black" href=""
         ><i class="fa-regular fa-heart"></i>قائمه المفضله</a
       >
@@ -135,7 +147,8 @@ export default {
     return {
       position: "right",
       visible: false,
-      discount : -5
+      discount : -5,
+      showDialog: true,
     };
   },
   computed: {
@@ -213,7 +226,7 @@ h4 {
   font-size: 13px;
   color: #8c8896;
   margin-right: 7%;
-  /* gap: 20px; */
+  padding: 8px;
 }
 .right a {
   color: #a4ca72;
@@ -242,20 +255,24 @@ h4 {
 }
 
 .nav input {
-  width: 850px;
-  height: 50px;
+  width: 640px;
+  height: 60px;
   border-radius: 10px;
   background-color: #f5f5f5;
   border: none;
   margin-top: 2%;
+ position: relative;
+ right: 15px;
+ top: 0%;
+ z-index: -99999999999999999;
 }
 
 .right button {
   background-color: #a4ca72;
   color: white;
-  margin-top: 30px;
-  width: 50px;
-  height: 50px;
+  margin-top: 25px;
+  width: 60px;
+  height: 60px;
   border: none;
   border-radius: 10px;
 }

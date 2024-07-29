@@ -24,8 +24,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <img style="margin-left: 50%;" width="20%" src="../assets/logo.png" alt="" />
-          <h3 style="font-size: 16px; text-align: right; margin-top: 4%;">
+          <img style="margin-left: 40%;" width="20%" src="../assets/logo.png" alt="" />
+          <h3 style="font-size: 17px; line-height: 29px; text-align: right; margin-right: 15%; margin-top: 4%;">
             موقع متخصص لبيع جميع المنتجات , منصة لبيع <br> وشراء السلع سواء كانت
             منتجات أو خدمات أو <br> معلومات عبر شبكة الإنترنت.
           </h3>
@@ -38,8 +38,11 @@
             </div>
             </div>
 
-        <div class="col-md-3">
-          <h3>روابط سريعه</h3>
+        <div class="col-md-3" >
+          <h3 >روابط سريعه</h3>
+          <div style="text-align: right; margin-right: 36%">
+
+          
           <router-link to="/OurPrivacyView">سياسة الخصوصية والاستخدام</router-link>
           <router-link to="/OurRolesView">سياسة الاسترجاع</router-link>
           <router-link to="/OurStoriesView">قصتنا</router-link>
@@ -47,11 +50,12 @@
           <router-link to="/ContactUsView">تواصل معنا</router-link>
           <router-link to="/QuestionView">الأسألة الشائعة</router-link>
         </div>
+      </div>
 
-        <div class="col-md-3 icon" style="margin-top: 7px">
+        <div class="col-md-3 icon" style="margin-top: 7px; ">
           <h3>تواصل معنا</h3>
-          <p><i class="fa-solid fa-phone"></i>547-526-8071</p>
-          <p><i class="fa-regular fa-envelope"></i>QpDkP@gmail.com</p>
+          <p><i  class="fa-solid fa-phone"></i>547-526-8071</p>
+          <p><i class="fa-regular fa-envelope"></i>Example@gmail.com</p>
           <p><i class="fa-brands fa-whatsapp"></i>825-571-0899</p>
         </div>
 
@@ -88,15 +92,25 @@ export default {};
 
 <style scoped>
 
+
+
 .icon i {
     margin: 14px;
+   
+
+}
+.icon p{
+  text-align: right;
+  margin-right: 36%;
+  margin-top: 2%;
+  ;
 }
 .ii i{
     margin: 9px;
     border: 1px solid black;
     border-radius: 50%;
     padding: 5px;
-    margin-top: 33%;
+    margin-top: 16%;
 
 }
 .ii{
@@ -109,7 +123,7 @@ export default {};
 }
 
 .image img {
-  width: 5%;
+  width: 7%;
   margin: 5px;
   padding: 4px;
 }
