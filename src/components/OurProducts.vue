@@ -96,7 +96,7 @@
                   12 كيلو مانجو سيكو المواصفات
                 </p>
 
-                <div class="inp" style="margin-left: 31%">
+                <div class="inp" style="margin-left: 32%">
                   <h2>نوع الفاكهه</h2>
 
                   <input type="radio" />
@@ -516,8 +516,8 @@ h4 {
   /* margin-right: 36px; */
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-around;
+  gap: 30px;
+  justify-content: space-between;
 }
 /* img {
   width: 175px;
@@ -525,7 +525,7 @@ h4 {
 .iteem {
   border: 1px solid rgba(217, 217, 217, 1);
   padding: 16px;
-  width: 22%;
+  width: 23.5%;
   border-radius: 23px;
   position: relative;
 }
