@@ -14,138 +14,9 @@
         />
       </div>
 
-      <div class="eye" @click="visible = true">
+      <div class="eye" @click="openDialogProduct(item)">
         <i class="fa-regular fa-eye"></i>
       </div>
-      
-      
-      
-      <Dialog
-        v-model:visible="visible"
-        modal
-        :style="{ width: '75rem' }"
-        style="
-          background-color: white;
-          padding: 20px;
-          box-shadow: 4px 5px 5px #aaaaaa;
-          border-radius: 15px;
-        "
-      >
-        <div>
-          <h2>تفاصيل المنتج</h2>
-
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <img
-                  width="227px"
-                  src="../assets/1ac07425cb11d3e6b9f9a2e226afcc9e.png"
-                  alt=""
-                />
-
-                <div style="display: flex">
-                  <img
-                    width="100px"
-                    height="100px"
-                    src="../assets/1ac07425cb11d3e6b9f9a2e226afcc9e.png"
-                    alt=""
-                  />
-                  <img
-                    width="100px"
-                    height="100px"
-                    src="../assets/1ac07425cb11d3e6b9f9a2e226afcc9e.png"
-                    alt=""
-                  />
-                  <img
-                    width="100px"
-                    height="100px"
-                    src="../assets/1ac07425cb11d3e6b9f9a2e226afcc9e.png"
-                    alt=""
-                  />
-                </div>
-
-
-                <div class=" flex justify-center">
-        <VirtualScroller :items="items" :itemSize="50" class="border border-surface-200 dark:border-surface-700 rounded" style="width: 320px; height: 300px">
-            <template >
-             
-                <div :class="['flex items-center p-2', { 'bg-surface-100 dark:bg-surface-700': options.odd }]" style="height: 50px">
-                 
-                </div>
-            </template>
-        </VirtualScroller>
-    </div>
-
-
-              </div>
-
-              <div class="col-md-8" style="padding-right: 4%;">
-                <h2>{{ item.description }}</h2>
-                <p>حوالي 600 جرام - 650 جرام للقطعة الواحدة</p>
-
-                <div style="display: flex; gap: 15px">
-                  <p style="text-decoration: line-through">
-                    {{ item.originalPrice }}
-                  </p>
-                  <h3 style="color:  rgba(164, 202, 114, 1);">{{ item.originalPrice }} SAR</h3>
-                  <p>شامل قيمة الضريبة</p>
-                </div>
-                <h2 style="margin: 10px">تفاصيل المنتج</h2>
-                <p style="font-size: 22px">
-                  12 كيلو مانجو سيكو المواصفات نبات صيني بدون سكر عضوي مجمد ,,
-                  12 كيلو مانجو سيكو المواصفات
-                </p>
-
-                <div class="inp" style="margin-left: 32%">
-                  <h2>نوع الفاكهه</h2>
-
-                  <input type="radio" />
-                  <label style="padding: 13px; font-size: 20px" for=""
-                    >فاكهه طازجه</label
-                  >
-
-                  <input type="radio" />
-                  <label style="padding: 13px; font-size: 20px" for=""
-                    >فاكهه طازجه</label
-                  >
-
-                  <input type="radio" />
-                  <label style="padding: 13px; font-size: 20px" for=""
-                    >فاكهه طازجه</label
-                  >
-
-                  <input type="radio" />
-                  <label style="padding: 13px; font-size: 20px" for=""
-                    >فاكهه طازجه</label
-                  >
-
-                  <input type="radio" />
-                  <label style="padding: 13px; font-size: 20px" for=""
-                    >فاكهه طازجه</label
-                  >
-                </div>
-               
-               
-                <div style="margin-left: 30px">
-                  <h2>الشراء بــــ</h2>
-                  <input type="radio" />
-                  <label style="padding: 13px; font-size: 20px" for=""
-                    >الكيـــلو</label
-                  >
-
-                  <input type="radio" />
-                  <label style="padding: 13px; font-size: 20px" for="">
-                    الجــملــه</label
-                  >
-                </div>
-
-                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> اضف الى السلة</button>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </Dialog>
 
       <div class="price">
         <h5 class="text-muted">{{ item.originalPrice }} ر.س</h5>
@@ -196,15 +67,143 @@
         ></i>
       </div>
     </div>
-  </div>
 
- 
+
+
+    <Dialog
+      v-model:visible="visible"
+      modal 
+      :style="{ width: '75rem' }"
+      style="
+        background-color: white;
+        padding: 20px;
+        box-shadow: 4px 5px 5px #aaaaaa;
+        border-radius: 15px;
+      "
+    >
+      <div>
+        <h2>تفاصيل المنتج</h2>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <img
+                width="227px"
+                :src="product.image"
+                alt=""
+              />
+
+              <div style="display: flex">
+                <img
+                  width="100px"
+                  height="100px"
+                  :src="product.image"
+                  alt=""
+                />
+                <img
+                  width="100px"
+                  height="100px"
+                 :src="product.image"
+                  alt=""
+                />
+                <img
+                  width="100px"
+                  height="100px"
+                  :src="product.image"
+                  alt=""
+                />
+              </div>
+
+              <div class="flex justify-center">
+                <VirtualScroller
+                  :items="items"
+                  :itemSize="50"
+                  class="border border-surface-200 dark:border-surface-700 rounded"
+                  style="width: 320px; height: 300px"
+                >
+                  <template>
+                    <div
+                      :class="[
+                        'flex items-center p-2',
+                        { 'bg-surface-100 dark:bg-surface-700': options.odd },
+                      ]"
+                      style="height: 50px"
+                    >
+                      <h2>dddddddddddd</h2>
+                    </div>
+                  </template>
+                </VirtualScroller>
+              </div>
+            </div>
+
+            <div class="col-md-8" style="padding-right: 4%">
+              <h2>{{ product.description }}</h2>
+              <p>حوالي 600 جرام - 650 جرام للقطعة الواحدة</p>
+
+              <div style="display: flex; gap: 15px">
+                <p style="text-decoration: line-through">
+                  {{ product.originalPrice }}
+                </p>
+                <h3 style="color: rgba(164, 202, 114, 1)">
+                  {{ product.originalPrice }} SAR
+                </h3>
+                <p>شامل قيمة الضريبة</p>
+              </div>
+              <h2 style="margin: 10px">تفاصيل المنتج</h2>
+              <p style="font-size: 22px">
+                12 كيلو مانجو سيكو المواصفات نبات صيني بدون سكر عضوي مجمد ,, 12
+                كيلو مانجو سيكو المواصفات
+              </p>
+
+              <div class="inp" style="margin-left: 32%">
+                <h2>نوع الفاكهه</h2>
+
+                <input type="radio" value="new" name="fruits" />
+                <label for="">فاكهه طازجه</label>
+
+                <input type="radio" value="new1" name="fruits" />
+                <label for="">فاكهة مجففة </label>
+
+                <input type="radio" value="new2" name="fruits" />
+                <label for=""> فاكهة مثلجة</label>
+
+                <input type="radio" value="new3" name="fruits" />
+                <label for="">فاكهه طازجه</label>
+
+                <input type="radio" value="new4" name="fruits" />
+                <label for="">فاكهه طازجه</label>
+              </div>
+
+              <div style="margin-left: 30px">
+                <h2>الشراء بــــ</h2>
+                <input type="radio" />
+                <label for="">الكيـــلو</label>
+
+                <input type="radio" />
+                <label for=""> الجــملــه</label>
+              </div>
+
+              <button
+                class="btn"
+                @click="
+                  addItem(product);
+                  showAlert();
+                  visible = false;
+                "
+              >
+                <i class="fa-solid fa-cart-shopping"></i> اضف الى السلة
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Dialog>
+  
+  </div>
 </template>
 
 <script>
-
-
-import VirtualScroller from 'primevue/virtualscroller';
+import VirtualScroller from "primevue/virtualscroller";
 
 import "primeicons/primeicons.css";
 import Dialog from "primevue/dialog";
@@ -219,7 +218,7 @@ export default {
   data() {
     return {
       visible: false,
-
+      product: null,
       items: [
         {
           id: 1,
@@ -418,7 +417,7 @@ export default {
   },
   components: {
     Dialog,
-    VirtualScroller
+    VirtualScroller,
   },
 
   computed: {
@@ -438,24 +437,32 @@ export default {
     increment(index) {
       this.items[index].count++;
     },
+    openDialogProduct(item) {
+      this.visible = true;
+      this.product = item;
+    },
     ...mapActions(useCounterStore, ["addItem"]),
   },
 };
 </script>
 
 <style scoped>
+label {
+  padding: 13px;
+  font-size: 20px;
+}
 .btn {
   border: none;
-    background-color: rgba(164, 202, 114, 1);
-    color: white;
-    padding: 21px;
-    border-radius: 14px;
+  background-color: rgba(164, 202, 114, 1);
+  color: white;
+  padding: 21px;
+  border-radius: 14px;
 }
 input {
   width: 20px;
   height: 20px;
 }
- .iteem:hover .eye {
+.iteem:hover .eye {
   display: block;
 }
 .eye {
@@ -511,13 +518,13 @@ h4 {
   margin: 0;
 }
 .caard {
+  margin-right: 39px;
   position: relative;
-  width: 100%;
-  /* margin-right: 36px; */
+  width: 96%;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 /* img {
   width: 175px;

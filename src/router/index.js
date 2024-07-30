@@ -8,6 +8,8 @@ import MdowanaView from '../views/MdowanaView.vue'
 import OurRolesView from '../views/OurRolesView.vue'
 import QuestionView from '../views/QuestionView.vue'
 import RegisterView from '../views/RegisterView.vue'
+import ConfirmView from '@/views/ConfirmView.vue'
+import SuccessPay from '@/views/SuccessPay.vue'
 
 const routes = [
   {
@@ -61,6 +63,17 @@ const routes = [
     component: RegisterView,
   },
 
+{
+  path: '/ConfirmView',
+  name : 'ConfirmView',
+  component : ConfirmView
+},
+{
+path : '/SuccessPay',
+name : 'SuccessPay',
+component : SuccessPay
+
+}
 
 ]
 

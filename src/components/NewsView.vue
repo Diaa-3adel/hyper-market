@@ -1,14 +1,14 @@
 <template>
   <div
     style="
-      margin: 15px;
-      padding: 0 20px;
+      margin: 20px;
+      /* padding: 0 20px; */
       display: flex;
       justify-content: space-between;
     "
   >
     <h2>اخر الاخبــــــار</h2>
-    <h2 style="color: rgba(164, 202, 114, 1)">عرض الكــل</h2>
+    <h2 style="color: rgba(164, 202, 114, 1); margin-left: 25px">عرض الكــل</h2>
   </div>
 
 <div class="container-fluid ">
@@ -46,8 +46,11 @@ export default {};
 
 <style scoped>
 img{
-    width: 90%;
-    border-radius: 25px;
+    width: 96%;
+    border-radius: 18px;
+    margin-right: 18px;
+    margin-left: 10px;
+    /* padding: 25px; */
     
 
 }

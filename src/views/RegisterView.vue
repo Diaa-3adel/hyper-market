@@ -40,7 +40,7 @@ margin-bottom: 3%;
         >كلمة المرور يجب ان تحتوي على الاقل على 8 رموز مكونة من حروف وارقام
       </p>
       <div class="bttn">
-        <button>انضم الآن</button>
+       <router-link to="/ConfirmView"> <button>انضم الآن</button></router-link>
       </div>
 
       <div class="sign" style="display: flex; justify-content: space-between">

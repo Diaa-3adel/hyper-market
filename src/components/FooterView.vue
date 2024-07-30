@@ -40,7 +40,7 @@
 
         <div class="col-md-3" >
           <h3 >روابط سريعه</h3>
-          <div style="text-align: right; margin-right: 36%">
+          <div style="text-align: right; margin-right: 33%">
 
           
           <router-link to="/OurPrivacyView">سياسة الخصوصية والاستخدام</router-link>

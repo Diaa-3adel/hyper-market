@@ -1,5 +1,5 @@
 <template>
-    <h1 style="text-align: right; margin-right: 45px">تســــــوق الاقسام </h1>
+    <h1 style="text-align: right; margin-right: 45px; margin-top: 2%;">تســــــوق الاقسام </h1>
   <div class=" shop">
 
 
@@ -58,10 +58,13 @@ a{
 }
 .shop {
   display: flex;
-  gap: 20px;
-  padding: 20px;
-  margin: auto;
+    gap: 22px;
+    margin: auto;
+    margin-right: 34px;
+    margin-bottom: 25px;
+    margin-top: 27px;
 }
+
 .shop .item {
   background-color: rgba(140, 136, 150, 0.1);
   border: 1px solid white;

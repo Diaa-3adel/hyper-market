@@ -18,17 +18,150 @@
       <input type="search" placeholder=" ابحث باسم المنتج ..." />
 
       <a href=""
-        ><button><i class="fa-solid fa-magnifying-glass"></i></button
+        ><button>
+          <i
+            style="font-size: 30px"
+            class="fa-solid fa-magnifying-glass"
+          ></i></button
       ></a>
     </div>
+
     <div class="leftt">
-      <a href=""
+      <Button @click="visible2 = true"
         ><i
-          style="border: 1px solid black; border-radius: 50px; padding: 3px;"
+          style="border: 1px solid black; border-radius: 50px; padding: 3px"
           class="fa-regular fa-user"
         ></i
-        >تسجيل الدخول</a
+        >تسجيل الدخول</Button
       >
+
+      <Dialog
+        v-model:visible="visible2"
+        modal
+        style="
+          background-color: white;
+          box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+          border-radius: 15px;
+          padding: 25px;
+          width: 30%;
+        "
+      >
+        <h2>تسجيل الدخول</h2>
+        <p>من فضلك قمك بتسجيل الدخول لاستكمال عملية الشراء</p>
+        <h2 style="font-size: 15px; font-weight: bold; margin-top: 15px">
+          رقم الهاتف او البريد الالكترونى
+        </h2>
+        <input
+          class="form-control mt-2"
+          style="padding: 11px; width: 100%"
+          type="text"
+        />
+        <button
+          @click="
+            visible3 = true;
+            visible2 = false;
+          "
+          style="
+            width: 100%;
+            margin-top: 10px;
+            background-color: #a4ca72;
+            border: none;
+            color: white;
+            padding: 11px;
+            border-radius: 8px;
+          "
+        >
+          تسجيل الدخول
+        </button>
+
+        <div style="display: flex">
+          <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
+            ليس لديك حســـاب
+          </div>
+        </div>
+
+        <router-link to="/RegisterView">
+          <button
+            style="
+              width: 100%;
+              border: 1px solid #a4ca72;
+              background-color: white;
+              color: #a4ca72;
+
+              padding: 11px;
+              border-radius: 8px;
+            "
+          >
+            حســـاب جديد
+          </button>
+        </router-link>
+      </Dialog>
+
+      <Dialog
+        v-model:visible="visible3"
+        modal
+        style="
+          width: 100%;
+          background-color: white;
+          box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+          border-radius: 15px;
+          padding: 25px;
+          width: 30%;
+        "
+      >
+        <h2>تسجيل الدخول</h2>
+        <p>من فضلك قمك بتسجيل الدخول لاستكمال عملية الشراء</p>
+        <h2 style="font-size: 15px; font-weight: bold; margin-top: 15px">
+          كلمــه المرور
+        </h2>
+        <input class="form-control" style="padding: 11px; width: 100%" type="text" />
+
+        <button
+          @click="
+            visible3 = true;
+            visible2 = false;
+          "
+          style="
+            border: none;
+            background-color: white;
+            color: black;
+            margin-right: 70%;
+            margin-top: 5px;
+          "
+        >
+          نسيــت كلمــة المرور ؟
+        </button>
+        <button   style="
+            width: 100%;
+            margin-top: 10px;
+            background-color: #a4ca72;
+            border: none;
+            color: white;
+            padding: 11px;
+            border-radius: 8px;
+          ">تسجيل الدخول</button>
+        <div style="display: flex">
+          <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
+            ليس لديك حســـاب
+          </div>
+        </div>
+        <router-link to="/RegisterView">
+          <button
+          style="
+              width: 100%;
+              border: 1px solid #a4ca72;
+              background-color: white;
+              color: #a4ca72;
+
+              padding: 11px;
+              border-radius: 8px;
+            "
+          >
+            حســـاب جديد
+          </button>
+        </router-link>
+      </Dialog>
+
       <button
         @click="
           visible = true;
@@ -39,11 +172,8 @@
         <i class="fa-solid fa-cart-shopping"></i> السله ({{ cartItem.length }} )
       </button>
 
-
-     
-
       <Dialog
-      v-if="showDialog"
+        v-if="showDialog"
         v-model:visible="visible"
         :position="position"
         :modal="true"
@@ -75,9 +205,9 @@
 
         <h2>تفاصيل السعر</h2>
 
-        <div  style="display: flex; justify-content: space-between">
+        <div style="display: flex; justify-content: space-between">
           <h4>سعر المنتجات</h4>
-          <h4>{{ calculateTotal() }} ر.س </h4>
+          <h4>{{ calculateTotal() }} ر.س</h4>
         </div>
 
         <div style="display: flex; justify-content: space-between">
@@ -87,13 +217,13 @@
 
         <div style="display: flex; justify-content: space-between">
           <h4>خصم</h4>
-          <h4 style="color: red">SAR {{discount}}</h4>
+          <h4 style="color: red">SAR {{ discount }}</h4>
         </div>
         <hr />
 
         <div style="display: flex; justify-content: space-between">
           <h4>اجمالي السعر</h4>
-          <h4>{{ calculateAllTotal()  }}  ر.س</h4>
+          <h4>{{ calculateAllTotal() }} ر.س</h4>
         </div>
         <div class="arow">
           <h4>لديك كوبون خصم</h4>
@@ -120,14 +250,6 @@
         </router-link>
       </Dialog>
 
-
-
-
-
-
-
-
-
       <a style="border-right: 1px solid black" href=""
         ><i class="fa-regular fa-heart"></i>قائمه المفضله</a
       >
@@ -147,7 +269,9 @@ export default {
     return {
       position: "right",
       visible: false,
-      discount : -5,
+      visible2: false,
+      visible3: false,
+      discount: -5,
       showDialog: true,
     };
   },
@@ -160,7 +284,7 @@ export default {
         (acc, item) => acc + parseFloat(item.originalPrice),
         0
       );
-      const TotalWithAll = Math.round(productTotal + this.discount );
+      const TotalWithAll = Math.round(productTotal + this.discount);
       return TotalWithAll;
     },
 
@@ -169,10 +293,13 @@ export default {
       this.visible = true;
     },
     calculateTotal() {
-    const productTotal = this.items.reduce((acc, item) => acc + parseFloat( item.originalPrice) , 0);
-    console.log(productTotal);
-    return productTotal;
-  },
+      const productTotal = this.items.reduce(
+        (acc, item) => acc + parseFloat(item.originalPrice),
+        0
+      );
+      console.log(productTotal);
+      return productTotal;
+    },
     addProduct() {
       this.type++;
     },
@@ -261,10 +388,10 @@ h4 {
   background-color: #f5f5f5;
   border: none;
   margin-top: 2%;
- position: relative;
- right: 15px;
- top: 0%;
- z-index: -99999999999999999;
+  position: relative;
+  right: 15px;
+  top: 0%;
+  z-index: -99999999999999999;
 }
 
 .right button {
