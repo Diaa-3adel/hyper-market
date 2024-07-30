@@ -29,8 +29,15 @@
         ></i
         >تسجيل الدخول</a
       >
-      <button @click="visible = true" style="border-right: 1px solid black">
-        <i class="fa-solid fa-cart-shopping"></i> السله ( {{ count }} )
+      <button
+        @click="
+          visible = true;
+          getItems();
+        "
+        style="border-right: 1px solid black"
+      >
+        <i class="fa-solid fa-cart-shopping"></i> السله 
+        ({{ cartItem.length }} )
       </button>
 
       <Dialog
@@ -42,41 +49,28 @@
           background-color: white;
           box-shadow: 8px 8px 8px rgba(0.2, 0, 0, 0.2);
           border-radius: 15px;
+          height: 850px ;
+     
         "
         class="p-3"
       >
         <h2 style="background-color: rgba(164, 202, 114, 1)">السلة</h2>
-        <h3>كل المنتجات (2)</h3>
-
-        <div class="cards">
-          <img
-            src="../assets/bc599f468ec1cfb6da1d0fd808601971.png"
-            width="5px"
-            alt=""
-          />
-          <h4>كرتونة من المانجو معبأة بطريقة صحيحة للحفاظ عليها</h4>
-
-          <!-- <p  style=" font-size: 17px; ">
-              50 جرام مانجو سيكو المواصفات نبات صيني بدون <br />
-              سكر عضوي مجمد
-            </p> -->
+        <h3>كل المنتجات ({{ cartItem.length }})</h3>
+        <div class="cards" v-for="item in items" :key="item.id">
+          <div style="display: flex">
+            <img :src="item.image" alt="" />
+            <div style="display: flex; flex-direction: column">
+              <h5>{{ item.description }}</h5>
+              <p>{{ item.details }}</p>
+              <h3 style="color: rgba(164, 202, 114, 1)">
+                {{ item.originalPrice }} ر.س
+              </h3>
+              <hr />
+            </div>
+          </div>
+          <hr />
         </div>
-        <h3 style="color: rgba(164, 202, 114, 1); margin-right: 18%">
-          50.12 ر.س
-        </h3>
-        <hr />
-        <div class="cards">
-          <img
-            src="../assets/bc599f468ec1cfb6da1d0fd808601971.png"
-            width="5px"
-            alt=""
-          />
-          <h4>كرتونة من المانجو معبأة بطريقة صحيحة للحفاظ عليها</h4>
-        </div>
-        <h3 style="color: rgba(164, 202, 114, 1); margin-right: 18%">
-          50.12 ر.س
-        </h3>
-        <hr />
+
         <h2>تفاصيل السعر</h2>
 
         <div style="display: flex; justify-content: space-between">
@@ -143,11 +137,10 @@ export default {
     return {
       position: "right",
       visible: false,
-      
     };
   },
   computed: {
-    ...mapState(useCounterStore, ["count"]),
+    ...mapState(useCounterStore, ["count", "items", "cartItem"]),
   },
   methods: {
     openPosition(position) {
@@ -158,6 +151,7 @@ export default {
       this.type++;
     },
     ...mapActions(useCounterStore, ["increment"]),
+    ...mapActions(useCounterStore, ["getItems"]),
   },
 };
 </script>
@@ -171,8 +165,16 @@ export default {
   margin-top: 14px;
   background-color: rgba(247, 247, 247, 1);
 }
-h4 {
+p {
   font-size: 17px;
+}
+h5 {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 5px;
+}
+h4 {
+  font-size: 20px;
   margin: 5px;
 }
 .cards img {

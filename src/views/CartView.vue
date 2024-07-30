@@ -33,23 +33,19 @@
               font-size: 20px;
             "
           >
-            كل المنتجات (2)
+            كل المنتجات ({{  cartItem.length  }})
           </h2>
 
-          <div class="cards">
-            <img
-              src="../assets/bc599f468ec1cfb6da1d0fd808601971.png"
-              width="5px"
-              alt=""
-            />
+          <div v-for="item in items" :key="item.id" class="cards">
+            <img :src="item.image" alt="" />
             <div
               style="display: flex; flex-direction: column; margin-left: 30%"
             >
-              <h2 style="text-align: right; font-size: 20px">
-                كرتونة من المانجو معبأة بطريقة صحيحة للحفاظ عليها
+              <h2 style="text-align: right;  font-size: 25px">
+                {{ item.description }}
               </h2>
-              <h2 style="font-size: 20px; font-weight: bold; text-align: right">
-                50.12 ر.س
+              <h2 style="font-size: 20px; color:  #a4ca72; font-weight: bold; text-align: right">
+                {{ item.originalPrice }}
               </h2>
             </div>
 
@@ -62,20 +58,17 @@
                   color: white;
                   background-color: rgba(238, 37, 39, 1);
                   border-radius: 60%;
-                  padding: 2px 8px;
+                  padding: 1px 4px;
+                 
                 "
               >
-                x
+              <i class="fa-solid fa-xmark"></i>
               </a>
             </h2>
           </div>
           <hr />
-          <div class="cards">
-            <img
-              src="../assets/bc599f468ec1cfb6da1d0fd808601971.png"
-              width="5px"
-              alt=""
-            />
+          <!-- <div class="cards">
+            <img :src="item.image"  alt="" />
             <div
               style="display: flex; flex-direction: column; margin-left: 30%"
             >
@@ -102,7 +95,7 @@
                 x
               </a>
             </h2>
-          </div>
+          </div> -->
         </div>
 
         <div class="col-md-3 bg-white p-4 rounded">
@@ -149,29 +142,38 @@
 
           <Dialog
             v-model:visible="visible"
-            modal
-            header="Edit Profile"
-            :style="{ width: '25rem' }"
+            modal 
+            style="
+              background-color: white;
+              box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+              border-radius: 15px;
+              padding: 25px;
+              width: 30%;
+            "
           >
-            <span class="text-surface-500 dark:text-surface-400 block mb-8"
-              >Update your information.</span
-            >
-            <div class="flex items-center gap-4 mb-4">
-              <label for="username" class="font-semibold w-24">Username</label>
-              <InputText id="username" class="flex-auto" autocomplete="off" />
+            <h2>تسجيل الدخول</h2>
+            <p>من فضلك قمك بتسجيل الدخول لاستكمال عملية الشراء</p>
+            <h2 style="font-size: 15px; font-weight: bold; margin-top: 15px;">
+              رقم الهاتف او البريد الالكترونى
+            </h2>
+            <input
+              style="padding: 11px; width: 100%"
+              type="text"
+             
+            />
+            <button style="width: 100%; margin-top: 10px">تسجيل الدخول</button>
+            <div style="display: flex">
+              <div style="margin: auto; margin-top: 15px; margin-bottom: 15px" >ليس لديك حســـاب</div>
             </div>
-            <div class="flex items-center gap-4 mb-8">
-              <label for="email" class="font-semibold w-24">Email</label>
-              <InputText id="email" class="flex-auto" autocomplete="off" />
-            </div>
+            
+              <button style="width: 100%; border: 1px solid #a4ca72; background-color: white; color: #a4ca72;">حســـاب جديد</button>
+
+         
           </Dialog>
         </div>
       </div>
     </div>
   </div>
-
-  <h2>Counter : {{ count }}</h2>
-  <button @click="increment()">Increment</button>
 </template>
 
 <script>
@@ -188,11 +190,15 @@ export default {
     };
   },
   computed: {
-    ...mapState(useCounterStore, ["count"]),
+    ...mapState(useCounterStore, ["count", "items", "cartItem"]),
   },
 
   methods: {
-    ...mapActions(useCounterStore, ["increment"]),
+    ...mapActions(useCounterStore, ["getItems"]),
+  },
+
+  mounted() {
+    this.getItems();
   },
   components: { NavbarView, Dialog },
 };
@@ -200,6 +206,8 @@ export default {
 
 
 <style scoped>
+
+
 .total h3 {
   font-size: 18px;
   margin-top: 3%;
