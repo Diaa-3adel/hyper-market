@@ -5,9 +5,9 @@
     </div>
 
     <div class="left">
-      <a href="">المنتجات</a>
+      <a href="">المنتجات    </a>
       <router-link to="/OurStoriesView">قصتنا</router-link>
-      <router-link to="/MdowanaView">المدونه</router-link>
+      <router-link to="/MdowanaView">المدونه </router-link>
       <router-link to="/ContactUsView">تواصل معنا</router-link>
     </div>
   </div>

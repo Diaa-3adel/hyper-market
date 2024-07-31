@@ -10,6 +10,9 @@ import QuestionView from '../views/QuestionView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import ConfirmView from '@/views/ConfirmView.vue'
 import SuccessPay from '@/views/SuccessPay.vue'
+import FavoriteView from '@/views/FavoriteView.vue'
+import MyFavoriteView from '@/views/MyFavoriteView.vue'
+import AccSettingView from '@/views/AccSettingView.vue'
 
 const routes = [
   {
@@ -73,7 +76,32 @@ path : '/SuccessPay',
 name : 'SuccessPay',
 component : SuccessPay
 
-}
+},
+{
+
+path: '/FavoriteView',
+name : 'FavoriteView',
+component : FavoriteView,
+
+
+},
+{
+
+  path: '/MyFavoriteView',
+  name : 'MyFavoriteView',
+  component : MyFavoriteView,
+  
+  
+  },
+  {
+
+path: '/AccSettingView',
+name: 'AccSettingView',
+component : AccSettingView
+
+  }
+
+
 
 ]
 

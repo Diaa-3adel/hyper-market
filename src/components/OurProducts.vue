@@ -28,9 +28,10 @@
         >
       </div>
       <h3 style="text-align: right">{{ item.description }}</h3>
-      <p style="font-size: 17px; text-align: right">{{ item.details }}</p>
+      <p style="font-size: 17px; color: rgba(140, 136, 150, 1); text-align: right">{{ item.details }}</p>
 
       <button
+ 
         type="button"
         @click="
           addItem(item);
@@ -40,6 +41,8 @@
         <i class="fa-solid fa-cart-shopping"></i>
         أضف الى السلة
       </button>
+
+      
       <div v-if="count > 0" style="display: inline">
         <i
           v-if="count > 0"
@@ -447,6 +450,7 @@ export default {
 </script>
 
 <style scoped>
+
 label {
   padding: 13px;
   font-size: 20px;
@@ -495,7 +499,7 @@ h4 {
 }
 .caard img {
   width: 40%;
-  padding-top: 8px;
+  padding-bottom: 10px;
   margin-left: 30px;
 }
 .cards {
@@ -541,13 +545,17 @@ h4 {
   border: none;
   border: 1px solid;
   border-color: rgba(164, 202, 114, 1);
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 34%;
+  padding-right: 34%;
   border-radius: 10px;
   margin-top: 13px;
   background-color: white;
   color: rgba(164, 202, 114, 1);
   font-size: 16px;
+}
+.iteem button:hover {
+  background-color: rgba(164, 202, 114, 1);
+  color: white;
 }
 .price {
   display: flex;
@@ -556,10 +564,12 @@ h4 {
 }
 h3 {
   text-align: right;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: bold;
 }
 h5 {
   text-decoration: line-through;
+  margin-left: 21px;
 }
 .price p {
   font-weight: bold;

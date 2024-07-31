@@ -7,15 +7,17 @@
       <a href=""
         >English <img src="../assets/flag-button-round-250.png" alt="" />
       </a>
-      <a href="">EGP</a>
-      <a href="">اتـصل 16666</a>
+
+      <a style="border-left: 1px solid black" href="">EGP</a>
+      <a style="border-right: 1px solid black" href="">اتـصل 16666</a>
     </div>
   </div>
 
   <div class="nav py-4">
     <div class="right" style="display: flex">
       <img src="../assets/logo.png" alt="" />
-      <input type="search" placeholder=" ابحث باسم المنتج ..." />
+      <input type="text" class="form-control" placeholder=" ابحث باسم المنتج ..." />
+
 
       <a href=""
         ><button>
@@ -250,8 +252,8 @@
         </router-link>
       </Dialog>
 
-      <a style="border-right: 1px solid black" href=""
-        ><i class="fa-regular fa-heart"></i>قائمه المفضله</a
+      <router-link to="/FavoriteView" style="border-right: 1px solid black" href=""
+        ><i class="fa-regular fa-heart"></i>قائمه المفضله</router-link
       >
     </div>
   </div>
@@ -360,10 +362,8 @@ h4 {
   text-decoration: none;
 }
 .left a {
-  border-right: 1px solid black;
   margin: 3px;
-  padding: 3px;
-  margin-top: 3px;
+  padding: 6px;
   text-decoration: none;
   color: #000;
 }
@@ -373,7 +373,8 @@ h4 {
   /* padding-top: 7px; */
 }
 .left {
-  margin-left: 5%;
+  margin-left: 6%;
+  padding: 9px;
 }
 
 .right img {
@@ -388,21 +389,24 @@ h4 {
   background-color: #f5f5f5;
   border: none;
   margin-top: 2%;
-  position: relative;
-  right: 15px;
-  top: 0%;
-  z-index: -99999999999999999;
+
+
+
+  /* z-index: -99999999999999999; */
 }
 
-.right button {
-  background-color: #a4ca72;
-  color: white;
-  margin-top: 25px;
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 10px;
-}
+  .right button {
+    background-color: #a4ca72;
+    color: white;
+    margin-top: 25px;
+    width: 61px;
+    height: 61px;
+    border: none;
+    border-radius: 15px;
+ 
+  
+    
+  }
 
 .nav {
   display: flex;

@@ -173,8 +173,8 @@ p {
   border: 1px solid rgba(217, 217, 217, 1);
   border-radius: 10px;
   padding: 17px;
-  padding-left: 90px;
-  padding-right: 90px;
+  padding-left: 118px;
+  padding-right: 118px;
   font-size: 23px;
   margin-top: 5%;
   /* font-size: 27px; */
