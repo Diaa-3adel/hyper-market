@@ -1,8 +1,15 @@
 <template>
   <div class="subNav">
     <div class="right">
-      <h2>التوصيــل إلي <a href="">حدد موقعك</a></h2>
+
+
+  <h2>التوصيــل إلي <a   href="">حدد موقعك</a></h2>
+  
+
+    
+    
     </div>
+
     <div class="left" style="margin-top: 10px">
       <a href=""
         >English <img src="../assets/flag-button-round-250.png" alt="" />

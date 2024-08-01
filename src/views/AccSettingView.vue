@@ -31,7 +31,7 @@
               <i class="fa-regular fa-heart"></i> قائمة مفضلاتي
             </router-link>
 
-            <router-link to="">
+            <router-link to="/SavedAddressView">
               <i class="fa-solid fa-location-dot"></i> العناوين المحفوظة
             </router-link>
 
@@ -56,7 +56,7 @@
               <div class="co-12 col-lg-10 p-4">
                 <h2>اسم المستخدم</h2>
                 <input
-                  style="padding: 15px"
+                  style="padding: 15px; width: 100%"
                   type="text"
                   class="form-control"
                   placeholder="الاسم كاملا"
@@ -64,7 +64,7 @@
               </div>
             </div>
 
-            <div class="row" style="margin-right: 12%">
+            <div class="row" style="margin-right: 13.2%">
               <div class="col-lg-6 col-10 mt-4">
                 <div class="form-group">
                   <label class="text-start mb-3" for="">رقم الهاتف </label>
@@ -76,7 +76,7 @@
                   />
                 </div>
               </div>
-              <div class="col-lg-6 col-12 mt-4">
+              <div class="col-lg-6 col-10 mt-4">
                 <div class="form-group">
                   <label class="text-start mb-3" for=""
                     >البريد الالكترونى
@@ -91,13 +91,17 @@
               </div>
             </div>
 
-            <div class="row" style="margin-right: 12%">
+            <div class="row mb-4" style="margin-right: 13.2%">
               <div class="col-6 mt-3">
                 <label for="" class="mt-3">تاريخ الميلاد</label>
-                <input style="padding: 15px" type="date" class="form-control" />
+                <input
+                  style="padding: 15px"
+                  type="date"
+                  class="form-control mt-3"
+                />
               </div>
 
-              <div class="col-6 mt-3">
+              <div class="col-6" style="margin-top: 3.7%">
                 <label for=""> الـنوع</label>
 
                 <div class="gender" style="margin: 15px">
@@ -148,41 +152,61 @@
               </div>
 
               <div></div>
-              <button @click="visible=true">
+              <button @click="visible = true">
                 تغير كلمة المرور
                 <i style="margin: 15px" class="fa-solid fa-chevron-left"></i>
               </button>
 
-
-
               <Dialog
-              v-model:visible="visible"
-              modal
-              style="
-                background-color: white;
-                box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
-                border-radius: 15px;
-                padding: 25px;
-                width: 30%;
-              "
-            >
-              <h2 style="font-size: 20px; font-weight: bold;" >  تغيير كلمة المرور </h2>
-              <p style="font-size: 15px; color: rgba(140, 136, 150, 1);">ادخل رقم الهاتف او البريد الالكترونى الذي قمت بالتسجيل به لتغيير كلمة المرور </p>
+                v-model:visible="visible"
+                modal
+                :pt="{
 
-              <h2 style="margin: 5% 0;font-size: 20px; font-weight: bold;">رقم الهاتف او البريد الالكترونى</h2>
-              <input style="padding: 11px; width: 100%" type="text" class="form-control" />
-              
-       
-              <button    
-               style="width: 100%; margin-top: 20px; background-color: rgba(164, 202, 114, 1); color: white; padding: 15px; border-radius: 10px; border: none;">
-                ارسال الكود
-              </button>
-          
-         
-            </Dialog>
+        root: 'border-none',
 
+        mask: {
+            style: 'background-color: rgba(0, 0, 0, 0.7)',
+        }
+    }"
+                style="
+                  background-color: white;
+                  box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+                  border-radius: 15px;
+                  padding: 25px;
+                  width: 30%;
+                "
+              >
+                <h2 style="font-size: 20px; font-weight: bold">
+                  تغيير كلمة المرور
+                </h2>
+                <p style="font-size: 15px; color: rgba(140, 136, 150, 1)">
+                  ادخل رقم الهاتف او البريد الالكترونى الذي قمت بالتسجيل به
+                  لتغيير كلمة المرور
+                </p>
 
+                <h2 style="margin: 5% 0; font-size: 20px; font-weight: bold">
+                  رقم الهاتف او البريد الالكترونى
+                </h2>
+                <input
+                  style="padding: 11px; width: 100%"
+                  type="text"
+                  class="form-control"
+                />
 
+                <button
+                  style="
+                    width: 100%;
+                    margin-top: 20px;
+                    background-color: rgba(164, 202, 114, 1);
+                    color: white;
+                    padding: 15px;
+                    border-radius: 10px;
+                    border: none;
+                  "
+                >
+                  ارسال الكود
+                </button>
+              </Dialog>
             </div>
           </div>
         </div>

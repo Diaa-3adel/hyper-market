@@ -39,7 +39,7 @@ body {
 }
 
 .p-accordioncontent-content{
-    border-style: none;
+    border-style: none !important;
 }
 
 .p-button{

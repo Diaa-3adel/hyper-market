@@ -32,7 +32,7 @@
               <i class="fa-regular fa-heart"></i> قائمة مفضلاتي
             </router-link>
 
-            <router-link to="">
+            <router-link to="/SavedAddressView">
               <i class="fa-solid fa-location-dot"></i> العناوين المحفوظة
             </router-link>
 

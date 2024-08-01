@@ -1,24 +1,64 @@
 <template>
   <div class="footer">
     <div class="info">
-      <div>
-        <h2>سرعه التوصيل</h2>
+      <div style="display: flex">
+        <div style="padding: 16px">
+          <img src="../assets/g3597.png" alt="" />
+        </div>
 
-        <P>لجميع الطلبات التي تزيد عن <br />150 SAR</P>
+        <div>
+          <h2 style="text-align: right">سرعه التوصيل</h2>
+
+          <P style="text-align: right"
+            >لجميع الطلبات التي تزيد عن <br />150 SAR</P
+          >
+        </div>
       </div>
-      <div>
-        <h2>التوصيـل المجاني</h2>
-        <P>لجميع الطلبات التي تزيد عن <br />150 SAR</P>
+
+      <div style="display: flex">
+        <div style="padding: 16px">
+          <img src="../assets/fast 1.png" alt="" />
+        </div>
+
+        <div>
+          <h2 style="text-align: right">التوصيـل المجاني</h2>
+
+          <P style="text-align: right"
+            >لجميع الطلبات التي تزيد عن <br />150 SAR</P
+          >
+        </div>
       </div>
-      <div>
-        <h2>مدفوعات آمنة</h2>
-        <P>لجميع الطلبات التي تزيد عن <br />150 SAR</P>
+
+      <div style="display: flex">
+        <div style="padding: 16px">
+          <img src="../assets/credit-card 1.png" alt="" />
+        </div>
+
+        <div>
+          <h2 style="text-align: right">مدفوعات آمنة</h2>
+
+          <P style="text-align: right"
+            >لجميع الطلبات التي تزيد عن <br />150 SAR</P
+          >
+        </div>
       </div>
-      <div>
-        <h2>خدمات الدعم</h2>
-        <P>لجميع الطلبات التي تزيد عن <br />150 SAR</P>
+
+      <div style="display: flex">
+        <div style="padding: 16px">
+          <img src="../assets/Group.png" alt="" />
+        </div>
+
+        <div>
+          <h2 style="text-align: right">خدمات الدعم</h2>
+
+          <P style="text-align: right"
+            >لجميع الطلبات التي تزيد عن <br />150 SAR</P
+          >
+        </div>
       </div>
+    
     </div>
+
     <hr />
 
     <div class="container-fluid">
@@ -53,7 +93,7 @@
         </div>
 
         <div class="col-md-3">
-          <h3 style="font-weight: bold;">روابط سريعه</h3>
+          <h3 style="font-weight: bold">روابط سريعه</h3>
           <div style="text-align: right; margin-right: 33%">
             <router-link to="/OurPrivacyView"
               >سياسة الخصوصية والاستخدام</router-link
@@ -67,18 +107,17 @@
         </div>
 
         <div class="col-md-3 icon" style="margin-top: 7px">
-          <h3 style="font-weight: bold;">تواصل معنا</h3>
+          <h3 style="font-weight: bold">تواصل معنا</h3>
           <p><i class="fa-solid fa-phone"></i>547-526-8071</p>
           <p><i class="fa-regular fa-envelope"></i>Example@gmail.com</p>
           <p><i class="fa-brands fa-whatsapp"></i>825-571-0899</p>
         </div>
 
-        <div class="col-md-3 ">
-          <h3 style="font-weight: bold;">فحص QR Code</h3>
+        <div class="col-md-3">
+          <h3 style="font-weight: bold">فحص QR Code</h3>
           <img
-          
             width="50%"
-            style="margin-top: 13px;"
+            style="margin-top: 13px"
             src="../assets/722b9228b78248240cf5cff26760b85d.png"
             alt=""
           />
@@ -137,7 +176,6 @@ export default {};
   width: 9%;
   margin: 5px;
   padding: 10px;
-
 }
 .footer {
   margin-top: 6%;
