@@ -56,7 +56,7 @@
               <div class="co-12 col-lg-10 p-4">
                 <h2>اسم المستخدم</h2>
                 <input
-                  style="padding: 15px; width: 100%"
+                  style="padding: 15px; width: 1149px"
                   type="text"
                   class="form-control"
                   placeholder="الاسم كاملا"
@@ -65,7 +65,7 @@
             </div>
 
             <div class="row" style="margin-right: 13.2%">
-              <div class="col-lg-6 col-10 mt-4">
+              <div class="col-lg-6 col-10 ">
                 <div class="form-group">
                   <label class="text-start mb-3" for="">رقم الهاتف </label>
                   <input

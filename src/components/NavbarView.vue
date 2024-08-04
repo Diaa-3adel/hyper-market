@@ -21,7 +21,8 @@
   </div>
 
   <div class="nav py-4">
-    <div class="right" style="display: flex">
+    
+    <div class="right" style="display: flex;;">
       <img src="../assets/logo.png" alt="" />
       <input type="text" class="form-control" placeholder=" ابحث باسم المنتج ..." />
 
@@ -390,12 +391,13 @@ h4 {
 }
 
 .nav input {
-  width: 640px;
+  /* width: 640px; */
   height: 60px;
   border-radius: 10px;
   background-color: #f5f5f5;
   border: none;
   margin-top: 2%;
+  padding-right: 350px;
 
 
 
