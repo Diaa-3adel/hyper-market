@@ -402,28 +402,28 @@ h4 {
 
 .nav input {
   /* width: 640px; */
-  height: 60px;
+  /* height: 60px; */
   border-radius: 10px;
   background-color: #f5f5f5;
   border: none;
   margin-top: 2%;
-  padding-right: 350px;
+  padding-left: 350px;
 
-
-
-  /* z-index: -99999999999999999; */
+/* position:relative;
+top: 0;
+right: 6px;
+  z-index: -99999999999999999; */
 }
 
   .right button {
     background-color: #a4ca72;
     color: white;
     margin-top: 25px;
-    width: 61px;
-    height: 61px;
+    width: 70px;
+    height: 70px;
     border: none;
     border-radius: 15px;
- 
-  
+
     
   }
 
