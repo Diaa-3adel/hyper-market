@@ -177,7 +177,7 @@
 
         </div>
 
-        <div class="col-md-3 bg-white p-4 rounded" style="margin-left: 2%">
+        <div class="col-md-3 bg-white p-4 rounded" style="margin-left: 2%; height:fit-content">
           <h3 style="font-weight: bold; text-align: right">تفاصيل الطلب</h3>
 
           <div style="display: flex">

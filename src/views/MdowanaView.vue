@@ -51,12 +51,12 @@
     </div>
 
 
-
+<footer-view></footer-view>
 </template>
 
 <script>
 import Breadcrumb from "primevue/breadcrumb";
-
+import FooterView from "@/components/FooterView.vue";
 import NavbarView from "@/components/NavbarView.vue";
 export default {
   data() {
@@ -67,6 +67,7 @@ export default {
   components: {
     NavbarView,
     Breadcrumb,
+    FooterView,
   },
 };
 </script>

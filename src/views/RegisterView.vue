@@ -40,7 +40,7 @@ margin-bottom: 3%;
         >كلمة المرور يجب ان تحتوي على الاقل على 8 رموز مكونة من حروف وارقام
       </p>
       <div class="bttn">
-       <router-link to="/ConfirmView"> <button>انضم الآن</button></router-link>
+       <router-link to="/ConfirmView"> <button @click="show()">انضم الآن</button></router-link>
       </div>
 
       <div class="sign" style="display: flex; justify-content: space-between">
@@ -114,6 +114,7 @@ margin-bottom: 3%;
 
 <script>
 import Dialog from "primevue/dialog";
+import Swal from "sweetalert2";
 
 export default {
     data(){
@@ -122,7 +123,26 @@ export default {
         }
     },
     components: {
-        Dialog
+        Dialog,
+
+        
+
+    },
+    methods: {
+      show(){
+
+        Swal.fire({
+  position: "top-center",
+  icon: "success",
+  title: "لقد تم تسجيل دخولك بنجاح",
+  showConfirmButton: false,
+  timer: 1500
+});
+
+
+
+      }
+      
     }
 };
 </script>
@@ -173,8 +193,8 @@ p {
   border: 1px solid rgba(217, 217, 217, 1);
   border-radius: 10px;
   padding: 17px;
-  padding-left: 90px;
-  padding-right: 90px;
+  padding-left: 118px;
+  padding-right: 118px;
   font-size: 23px;
   margin-top: 5%;
   /* font-size: 27px; */

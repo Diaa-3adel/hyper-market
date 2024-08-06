@@ -26,7 +26,15 @@
         >
       </div>
       <h3 style="text-align: right">{{ item.description }}</h3>
-      <p style="font-size: 17px; text-align: right">{{ item.details }}</p>
+      <p
+        style="
+          font-size: 17px;
+          color: rgba(140, 136, 150, 1);
+          text-align: right;
+        "
+      >
+        {{ item.details }}
+      </p>
 
       <button
         type="button"
@@ -38,6 +46,7 @@
         <i class="fa-solid fa-cart-shopping"></i>
         أضف الى السلة
       </button>
+
       <div v-if="count > 0" style="display: inline">
         <i
           v-if="count > 0"
@@ -66,11 +75,9 @@
       </div>
     </div>
 
-
-
     <Dialog
       v-model:visible="visible"
-      modal 
+      modal
       :style="{ width: '75rem' }"
       style="
         background-color: white;
@@ -85,52 +92,61 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <img
-                width="227px"
-                :src="product.image"
-                alt=""
-              />
+              <img width="227px" :src="product.image" alt="" />
 
               <div style="display: flex">
-                <img
-                  width="100px"
-                  height="100px"
-                  :src="product.image"
-                  alt=""
-                />
-                <img
-                  width="100px"
-                  height="100px"
-                 :src="product.image"
-                  alt=""
-                />
-                <img
-                  width="100px"
-                  height="100px"
-                  :src="product.image"
-                  alt=""
-                />
+                <img width="100px" height="100px" :src="product.image" alt="" />
+                <img width="100px" height="100px" :src="product.image" alt="" />
+                <img width="100px" height="100px" :src="product.image" alt="" />
               </div>
 
+
+
+
+
+
+              <div class="card p-2 mt-2 rounded   ">
+
+
+                <div class="newrate" style="display: flex; justify-content: space-between">
+              <h2 style="font-size: 23px; font-weight: bold;">التقييمات ( 10)</h2>
+              <button @click="visible2 = true, visible = false">اضف تقييما</button>
+            </div>
+
+
+
+
+
+
+              
+              
               <div class="flex justify-center">
-                <VirtualScroller
-                  :items="items"
-                  :itemSize="50"
-                  class="border border-surface-200 dark:border-surface-700 rounded"
-                  style="width: 320px; height: 300px"
-                >
-                  <template>
-                    <div
-                      :class="[
-                        'flex items-center p-2',
-                        { 'bg-surface-100 dark:bg-surface-700': options.odd },
-                      ]"
-                      style="height: 50px"
-                    >
-                      <h2>dddddddddddd</h2>
-                    </div>
-                  </template>
-                </VirtualScroller>
+          
+                  <VirtualScroller
+                    :items="items"
+                    :itemSize="60"
+                    class="border border-surface-200 dark:border-surface-700 rounded"
+                    style="width: 320px; height: 300px"
+                  >
+                    <template v-slot:header>
+                      <div>
+                        <h2 style="background-color: rgba(164, 202, 114, 1)">
+                          السلة
+                        </h2>
+                 
+                      </div>
+                    </template>
+                    <template v-slot:item="{ item, options }">
+                      <img
+                        width="100px"
+                        height="100px"
+                        :src="item.image"
+                        :key="options.index"
+                      />
+                      <p>{{ item.description }}</p>
+                    </template>
+                  </VirtualScroller>
+                </div>
               </div>
             </div>
 
@@ -174,10 +190,10 @@
 
               <div style="margin-left: 30px">
                 <h2>الشراء بــــ</h2>
-                <input type="radio" />
+                <input type="radio" value="new5" name="fruits" />
                 <label for="">الكيـــلو</label>
 
-                <input type="radio" />
+                <input type="radio" value="new6" name="fruits" />
                 <label for=""> الجــملــه</label>
               </div>
 
@@ -196,12 +212,52 @@
         </div>
       </div>
     </Dialog>
-  
+
+<!-- =========Dialog New Rate ======= -->
+
+<Dialog
+        v-model:visible="visible2"
+        modal
+        style="
+          background-color: white;
+          box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
+          border-radius: 15px;
+          padding: 25px;
+          width: 30%;
+        "
+      >
+        <h2>اضافة تقييم جديد </h2>
+        
+        <div class=" flex justify-center">
+        <Rating v-model="value"
+        style="color: rgba(164, 202, 114, 1); font-size: 90px;     margin-right: 146px;
+    margin-top: 36px;" />
+    </div>
+
+    <h2 style="font-size: 20px; font-weight: bold">اضافة تقييم</h2>
+    <input type="text" class="form-control" style="width: 100%; padding: 70px;">
+
+    <button class="send" @click="SendSuccses(),visible2 = false">ارسال</button>
+
+
+
+
+
+
+
+
+      </Dialog>
+
+
+
+    
   </div>
 </template>
 
 <script>
 import VirtualScroller from "primevue/virtualscroller";
+
+import Rating from 'primevue/rating';
 
 import "primeicons/primeicons.css";
 import Dialog from "primevue/dialog";
@@ -215,7 +271,9 @@ import Swal from "sweetalert2";
 export default {
   data() {
     return {
+      value: null,
       visible: false,
+      visible2: false,
       product: null,
       items: [
         {
@@ -416,17 +474,28 @@ export default {
   components: {
     Dialog,
     VirtualScroller,
+    Rating,
   },
 
   computed: {
     ...mapState(useCounterStore, ["addItem"]),
   },
   methods: {
+    SendSuccses(){
+      Swal.fire({
+        position: "top-center",
+  icon: "success",
+  title: "تـم إضافه تقـييمك بنــجاح ",
+  showConfirmButton: false,
+  timer: 1500
+});
+    },
     showAlert() {
       Swal.fire({
         position: "top-center",
         icon: "success",
         title: "تم اضافة المنتج بنجاح الى سلة التسوق",
+
         showConfirmButton: false,
         timer: 1500,
         width: 600,
@@ -445,6 +514,27 @@ export default {
 </script>
 
 <style scoped>
+.send{
+  border: 1px solid rgba(140, 136, 150, 1);
+  background-color: rgba(164, 202, 114, 1);
+  border: none;
+  width: 100%;
+  margin-top: 2%;
+  color: white;
+  padding: 13px;
+  padding-left: 70px;
+  padding-right: 70px;
+  border-radius: 8px;
+}
+.newrate button{
+  border: 1px solid rgba(140, 136, 150, 1);
+background-color: white;
+  color: rgba(140, 136, 150, 1) ;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 21px;
+  border-radius: 8px;
+}
 label {
   padding: 13px;
   font-size: 20px;
@@ -454,6 +544,8 @@ label {
   background-color: rgba(164, 202, 114, 1);
   color: white;
   padding: 21px;
+  padding-left: 41px;
+  padding-right: 41px;
   border-radius: 14px;
 }
 input {
@@ -493,7 +585,7 @@ h4 {
 }
 .caard img {
   width: 40%;
-  padding-top: 8px;
+  padding-bottom: 10px;
   margin-left: 30px;
 }
 .cards {
@@ -544,13 +636,17 @@ h4 {
   border: none;
   border: 1px solid;
   border-color: rgba(164, 202, 114, 1);
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 34%;
+  padding-right: 34%;
   border-radius: 10px;
   margin-top: 13px;
   background-color: white;
   color: rgba(164, 202, 114, 1);
   font-size: 16px;
+}
+.iteem button:hover {
+  background-color: rgba(164, 202, 114, 1);
+  color: white;
 }
 .price {
   display: flex;
@@ -559,10 +655,12 @@ h4 {
 }
 h3 {
   text-align: right;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: bold;
 }
 h5 {
   text-decoration: line-through;
+  margin-left: 21px;
 }
 .price p {
   font-weight: bold;

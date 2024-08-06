@@ -46,10 +46,10 @@ export default {};
 
 <style scoped>
 img{
-    width: 96%;
+    width: 92%;
     border-radius: 18px;
-    margin-right: 18px;
-    margin-left: 10px;
+    /* margin-right: 18px;
+    margin-left: 10px; */
     /* padding: 25px; */
     
 
