@@ -5,7 +5,7 @@
 
         <div class="item">
       <img src="../assets/1ac07425cb11d3e6b9f9a2e226afcc9e.png" alt="" />
-      <a href="">المنتجات الغذائية </a>
+      <router-link to="/AllProductView">المنتجات الغذائية </router-link>
       <p>250 منتج</p>
     </div>
     <div class="item">

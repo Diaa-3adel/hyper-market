@@ -58,3 +58,8 @@ body {
     margin-right: 5%;
 
 }
+
+li::marker {
+    color: rgba(164, 202, 114, 1);
+    font-size: 35px;
+}

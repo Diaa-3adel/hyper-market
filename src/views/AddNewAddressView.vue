@@ -89,7 +89,7 @@
               <button class="btn1">
                 <img src="../assets/briefcase.png" alt="" />عمل
               </button>
-              <button class="btn2">
+              <button class="btn1">
                 <img src="../assets/home-2.png" alt="" />منزل
               </button>
 
@@ -235,7 +235,7 @@ margin-top: 8%;
             ></i>
             <h5 style="font-size: 17px">01203900909 , Ahmed Ali</h5>
           </div>
-
+<router-link to="/SavedAddressView">
           <button
             style="
               background-color: white;
@@ -249,6 +249,7 @@ margin-top: 8%;
           >
             عرض كل العناوين
           </button>
+        </router-link>  
         </div>
       </div>
     </div>
@@ -326,14 +327,8 @@ dialog {
 .btn1 img {
   margin-left: 14px;
 }
-.btn2 {
-  margin-top: 2%;
-  color: #000;
-  padding: 20px 36px;
+.btn1:hover{
   border: 1px solid rgba(164, 202, 114, 1);
-  background-color: white;
-  border-radius: 8px;
-  margin-left: 20px;
 }
 .btn1 {
   margin-top: 2%;

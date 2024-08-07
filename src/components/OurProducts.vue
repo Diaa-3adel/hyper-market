@@ -1,5 +1,21 @@
 <template>
-  <h1 style="text-align: right; margin-right: 45px">منتجــــــاتنا</h1>
+  <div style="display: flex; justify-content: space-between ;">
+
+    <h1 style="text-align: right; margin-right: 45px">منتجــــــاتنا</h1>
+    
+    <div class="farms" style="display: flex; gap: 20px; margin-left: 3%; margin-top: 9px; margin-bottom: 2%;">
+    <button>دينا فارم</button>
+    <button>Flavour </button>
+    <button>المراعي </button>
+    <button>بريزيدنت </button>
+    <button>جهينة </button>
+    <button>بست </button>
+    <button> كل الأصناف  <i style="padding-right: 10px" class="fa-solid fa-angle-down"></i></button>
+    
+    
+  </div>
+  
+</div>
 
   <div class="caard">
     <div class="iteem" v-for="(item, index) in items" :key="index">
@@ -22,8 +38,7 @@
         <i
           style="color: gold; position: relative; top: 10px; right: 125px"
           class="fa-solid fa-star"
-          >{{ item.rating }}</i
-        >
+          >{{ item.rating }}</i>
       </div>
       <h3 style="text-align: right">{{ item.description }}</h3>
       <p
@@ -548,6 +563,13 @@ label {
   padding-right: 41px;
   border-radius: 14px;
 }
+
+.btn:hover{
+  background-color: white;
+  color: rgba(164, 202, 114, 1);
+  border: 1px solid rgba(164, 202, 114, 1);
+}
+
 input {
   width: 20px;
   height: 20px;
@@ -585,6 +607,7 @@ h4 {
 }
 .caard img {
   width: 40%;
+  height: 150px;
   padding-bottom: 10px;
   margin-left: 30px;
 }
@@ -667,4 +690,14 @@ h5 {
   font-size: 18px;
   color: rgba(164, 202, 114, 1);
 }
+.farms button{
+  font-size: 20px;
+  font-weight: 400;
+border: none;
+background-color: white;
+}
+.farms button:hover{
+
+  color: rgba(164, 202, 114, 1);
+  }
 </style >

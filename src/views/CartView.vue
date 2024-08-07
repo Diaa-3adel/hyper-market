@@ -202,9 +202,12 @@
               
                 >نسيــت كلمــة المرور ؟</button
               >
-              <button style="width: 100%; margin-top: 10px">
+
+              <router-link to="/ConfirmView">
+              <button @click=" show()" style="width: 100%; margin-top: 10px">
                 تسجيل الدخول
-              </button>
+              </button></router-link>
+
               <div style="display: flex">
                 <div
                   style="margin: auto; margin-top: 15px; margin-bottom: 15px"
@@ -328,6 +331,7 @@ import { mapActions, mapState } from "pinia";
 import InputOtp from 'primevue/inputotp';
 
 // const useStore = useCounterStore();
+import Swal from "sweetalert2";
 
 export default {
   data() {
@@ -348,9 +352,27 @@ export default {
   },
 
   methods: {
+    show(){
+
+Swal.fire({
+position: "top-center",
+icon: "success",
+title: "لقد تم تسجيل دخولك بنجاح",
+showConfirmButton: false,
+timer: 1500
+});
+
+
+
+},
     showSecondDilog() {
       this.visible = false;
       this.visible2 = true;
+    },
+
+    showThirdDilog() {
+      this.visible2 = false;
+      this.visible3 = true;
     },
 
     Delete(index) {

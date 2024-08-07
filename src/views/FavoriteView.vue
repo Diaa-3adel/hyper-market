@@ -56,7 +56,7 @@
             <div class="res">
       <img width="15%" src="../assets/g1893.png" alt="" />
       <h2>لم تقم باضافة منتجات الى قائمة مفضلاتك بعد !</h2>
-      <button>استكمال التســوق</button>
+    <router-link to="/AllProductView">  <button>استكمال التســوق</button> </router-link>
     </div>
 
 
@@ -192,7 +192,7 @@ export default {
           id: 3,
           quantity: 1,
           brand: "دينا فارم",
-          image: require("../assets/1ac07425cb11d3e6b9f9a2e226afcc9e.png"),
+          image: require("../assets/cf0719027f79dac053764bd437c26f8a.png"),
           originalPrice: "48.30",
           discountedPrice: "40.30",
           rating: "4.0",
@@ -324,6 +324,7 @@ h4 {
 }
 .caard img {
   width: 40%;
+  height: 150px;
   padding-bottom: 10px;
   margin-left: 30px;
 }

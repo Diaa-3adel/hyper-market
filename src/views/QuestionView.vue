@@ -108,7 +108,7 @@
 </div>
 
 <div>
-    <img  src="../assets/thinking-person-8-illustration-1579x2048-gawwrgvq.png" alt="">
+    <img  src="../assets/Frame.png" alt="">
 </div>
 
 

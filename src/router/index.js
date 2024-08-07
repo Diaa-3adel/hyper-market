@@ -15,6 +15,8 @@ import MyFavoriteView from '@/views/MyFavoriteView.vue'
 import AccSettingView from '@/views/AccSettingView.vue'
 import SavedAddressView from '@/views/SavedAddressView.vue'
 import AddNewAddressView from '@/views/AddNewAddressView.vue'
+import NewsDetails from '@/views/NewsDetails.vue'
+import AllProductView from '@/views/AllProductView.vue'
 
 const routes = [
   {
@@ -116,7 +118,22 @@ const routes = [
     name: 'AddNewAddressView',
     component: AddNewAddressView
 
+  } ,
+  {
+
+    path: '/NewsDetails',
+    name: 'NewsDetails',
+    component: NewsDetails
+
+  } ,
+  {
+
+    path: '/AllProductView',
+    name: 'AllProductView',
+    component: AllProductView
+
   }
+
 
 
 
@@ -124,7 +141,14 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
+  },
 })
 
 export default router

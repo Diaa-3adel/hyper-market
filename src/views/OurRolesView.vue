@@ -51,7 +51,7 @@
       <div class="col-md-4">
         <img
           style="margin-right: 30%; border-radius: 15px; height: 420px"
-          src="../assets/insurance-policy-data-security-business_114835-164.jpg"
+          src="../assets/obj.png"
           alt=""
         />
       </div>

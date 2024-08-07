@@ -23,7 +23,7 @@
   <div class="nav py-4">
     
     <div class="right" style="display: flex;;">
-      <img src="../assets/logo.png" alt="" />
+  <img src="../assets/logo.png" alt="" />
       <input type="text" class="form-control" placeholder=" ابحث باسم المنتج ..." />
 
 
@@ -37,7 +37,7 @@
     </div>
 
     <div class="leftt">
-      <Button @click="visible2 = true"
+      <Button @click="visible2 = true, show()"
         ><i
           style="border: 1px solid black; border-radius: 50px; padding: 3px"
           class="fa-regular fa-user"
@@ -134,6 +134,7 @@
           @click="
             visible3 = true;
             visible2 = false;
+          
           "
           style="
             border: none;
@@ -145,7 +146,10 @@
         >
           نسيــت كلمــة المرور ؟
         </button>
+       
+       <router-link to="">
         <button
+        @click="  show(), visible3 = false"
           style="
             width: 100%;
             margin-top: 10px;
@@ -158,6 +162,7 @@
         >
           تسجيل الدخول
         </button>
+      </router-link>
         <div style="display: flex">
           <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
             ليس لديك حســـاب
@@ -278,6 +283,8 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
+
 import Dialog from "primevue/dialog";
 import { useCounterStore } from "@/store/Counter";
 import { mapActions, mapState } from "pinia";
@@ -299,6 +306,19 @@ export default {
     ...mapState(useCounterStore, ["count", "items", "cartItem"]),
   },
   methods: {
+    show(){
+
+Swal.fire({
+position: "top-center",
+icon: "success",
+title: "لقد تم تسجيل دخولك بنجاح",
+showConfirmButton: false,
+timer: 1500
+});
+
+
+
+},
     calculateAllTotal() {
       const productTotal = this.items.reduce(
         (acc, item) => acc + parseFloat(item.originalPrice),
@@ -435,8 +455,8 @@ right: 6px;
   padding-right: 0%;
 }
 .leftt {
-  margin-top: 2%;
-  margin-left: 6%;
+  margin-top: 3%;
+  margin-left: 3%;
 }
 .leftt a {
   margin: 5px;

@@ -82,7 +82,7 @@
 
     <div class="newpro" style="margin-top: 13%">
       <h2>تسوق أحدث المنتجات</h2>
-      <button>عرض الكل</button>
+      <router-link to="/AllProductView"><button>عرض الكل</button></router-link>
     </div>
 
     <div class="caard">
@@ -143,10 +143,6 @@
 
 
 
-  <div class="flex justify-center">
-      <Rating v-model="value" readonly />
-      <span>(4.0)</span>
-    </div>
 </template>
   
   <script>
@@ -154,7 +150,6 @@ import NavbarView from "@/components/NavbarView.vue";
 import Breadcrumb from "primevue/breadcrumb";
 import { useCounterStore } from "@/store/Counter";
 
-import Rating from "primevue/rating";
 
 import { mapActions, mapState } from "pinia";
 import Swal from "sweetalert2";
@@ -227,8 +222,12 @@ export default {
   computed: {
     ...mapState(useCounterStore, ["addItem"]),
   },
-  components: { NavbarView, Breadcrumb, Rating },
+  components: { NavbarView, Breadcrumb,  },
   methods: {
+    Delete(index) {
+      this.items.splice(index, 1);
+      localStorage.cartItem = JSON.stringify(this.items);
+    },
     showAlert() {
       Swal.fire({
         position: "top-center",
@@ -362,6 +361,7 @@ h4 {
 }
 .caard img {
   width: 40%;
+  height: 150px;
   padding-bottom: 10px;
   margin-left: 30px;
 }

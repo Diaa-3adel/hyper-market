@@ -116,7 +116,7 @@
         <div class="col-md-3">
           <h3 style="font-weight: bold">فحص QR Code</h3>
           <img
-            width="50%"
+            width="45%"
             style="margin-top: 13px"
             src="../assets/722b9228b78248240cf5cff26760b85d.png"
             alt=""
@@ -149,12 +149,14 @@ export default {};
 
 <style scoped>
 .icon i {
-  margin: 14px;
+  padding-left: 14px;
+  margin-top: 5%;
+font-size: 20px;
 }
 .icon p {
-  text-align: right;
-  margin-right: 36%;
-  margin-top: 2%;
+  text-align: start;
+  margin-right: 35%;
+  /* margin-top: 2%; */
 }
 .ii i {
   margin: 8px;
