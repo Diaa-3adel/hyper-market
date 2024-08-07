@@ -312,6 +312,7 @@ export default {
 }
 .buton a:hover {
   border: 1px solid rgba(164, 202, 114, 1);
+  cursor:default;
 }
 a {
   text-decoration: none;

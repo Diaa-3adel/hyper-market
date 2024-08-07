@@ -76,7 +76,7 @@
                   />
                 </div>
               </div>
-              <div class="col-lg-6 col-10 mt-4">
+              <div class="col-lg-6 col-10 ">
                 <div class="form-group">
                   <label class="text-start mb-3" for=""
                     >البريد الالكترونى

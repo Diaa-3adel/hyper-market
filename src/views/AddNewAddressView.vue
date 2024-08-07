@@ -33,7 +33,7 @@
 
             <div class="col-lg-6 col-12">
               <label for=" ">
-                المحافظة
+                المدينة 
                 <p style="color: red; display: inline">*</p></label
               >
               <input type="text " class="form-control p-2" />
@@ -304,7 +304,13 @@ border: none;
   margin-left: 20px;
 }
 
+label{
+  padding-top: 2%;
 
+}
+input{
+  margin-top: 9px;
+}
 
 
 .Done h4{
