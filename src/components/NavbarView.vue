@@ -124,7 +124,11 @@
         <h2 style="font-size: 15px; font-weight: bold; margin-top: 15px">
           كلمــه المرور
         </h2>
-        <input class="form-control" style="padding: 11px; width: 100%" type="text" />
+        <input
+          class="form-control"
+          style="padding: 11px; width: 100%"
+          type="text"
+        />
 
         <button
           @click="
@@ -141,7 +145,8 @@
         >
           نسيــت كلمــة المرور ؟
         </button>
-        <button   style="
+        <button
+          style="
             width: 100%;
             margin-top: 10px;
             background-color: #a4ca72;
@@ -149,7 +154,10 @@
             color: white;
             padding: 11px;
             border-radius: 8px;
-          ">تسجيل الدخول</button>
+          "
+        >
+          تسجيل الدخول
+        </button>
         <div style="display: flex">
           <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
             ليس لديك حســـاب
@@ -157,7 +165,7 @@
         </div>
         <router-link to="/RegisterView">
           <button
-          style="
+            style="
               width: 100%;
               border: 1px solid #a4ca72;
               background-color: white;
@@ -192,6 +200,8 @@
           background-color: white;
           box-shadow: 8px 8px 8px rgba(0.2, 0, 0, 0.2);
           border-radius: 15px;
+
+          height: 850px;
           height: 950px;
         "
         class="p-3"
@@ -392,28 +402,28 @@ h4 {
 
 .nav input {
   /* width: 640px; */
-  height: 60px;
+  /* height: 60px; */
   border-radius: 10px;
   background-color: #f5f5f5;
   border: none;
   margin-top: 2%;
-  padding-right: 350px;
+  padding-left: 350px;
 
-
-
-  /* z-index: -99999999999999999; */
+/* position:relative;
+top: 0;
+right: 6px;
+  z-index: -99999999999999999; */
 }
 
   .right button {
     background-color: #a4ca72;
     color: white;
     margin-top: 25px;
-    width: 61px;
-    height: 61px;
+    width: 70px;
+    height: 70px;
     border: none;
     border-radius: 15px;
- 
-  
+
     
   }
 

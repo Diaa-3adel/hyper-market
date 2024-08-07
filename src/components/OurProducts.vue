@@ -1,5 +1,3 @@
-
- 
 <template>
   <h1 style="text-align: right; margin-right: 45px">منتجــــــاتنا</h1>
 
@@ -603,6 +601,8 @@ h4 {
   border: 1px solid white;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
+
+  font-size: 20px;
   font-size: 22px;
   position: absolute;
   top: 0;
@@ -624,7 +624,10 @@ h4 {
 .iteem {
   border: 1px solid rgba(217, 217, 217, 1);
   padding: 16px;
+  width: 22%;
+  border-radius: 20px;
   width: 23.5%;
+
   border-radius: 23px;
   position: relative;
 }
@@ -664,4 +667,4 @@ h5 {
   font-size: 18px;
   color: rgba(164, 202, 114, 1);
 }
-</style>
+</style >

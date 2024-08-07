@@ -163,11 +163,10 @@ margin-top: 8%;
           </div>
         </div>
 
-        <div
-          class="col-md-3 p-3 rounded"
+        <div class="col-md-4 p-4 rounded"
           style="
             background-color: white;
-            margin-right: 7.5%;
+            margin-right: 4%;
             height: fit-content;
           "
         >
