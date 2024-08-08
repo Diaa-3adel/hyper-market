@@ -93,11 +93,19 @@
     <Dialog
       v-model:visible="visible"
       modal
+      :pt="{
+
+root: 'border-none',
+
+mask: {
+    style: 'background-color: rgba(0, 0, 0, 0.7)',
+}
+}"
       :style="{ width: '75rem' }"
       style="
         background-color: white;
         padding: 20px;
-        box-shadow: 4px 5px 5px #aaaaaa;
+        box-shadow: 1px 1px 1px #aaaaaa;
         border-radius: 15px;
       "
     >
@@ -233,6 +241,14 @@
 <Dialog
         v-model:visible="visible2"
         modal
+        :pt="{
+
+root: 'border-none',
+
+mask: {
+    style: 'background-color: rgba(0, 0, 0, 0.7)',
+}
+}"
         style="
           background-color: white;
           box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);

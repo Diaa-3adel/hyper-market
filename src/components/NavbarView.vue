@@ -1,13 +1,7 @@
 <template>
   <div class="subNav">
     <div class="right">
-
-
-  <h2>التوصيــل إلي <a   href="">حدد موقعك</a></h2>
-  
-
-    
-    
+      <h2>التوصيــل إلي <a href="">حدد موقعك</a></h2>
     </div>
 
     <div class="left" style="margin-top: 10px">
@@ -21,11 +15,13 @@
   </div>
 
   <div class="nav py-4">
-    
-    <div class="right" style="display: flex;;">
-  <img src="../assets/logo.png" alt="" />
-      <input type="text" class="form-control" placeholder=" ابحث باسم المنتج ..." />
-
+    <div class="right" style="display: flex">
+      <img src="../assets/logo.png" alt="" />
+      <input
+        type="text"
+        class="form-control"
+        placeholder=" ابحث باسم المنتج ..."
+      />
 
       <a href=""
         ><button>
@@ -37,7 +33,7 @@
     </div>
 
     <div class="leftt">
-      <Button @click="visible2 = true, show()"
+      <Button @click="visible2 = true"
         ><i
           style="border: 1px solid black; border-radius: 50px; padding: 3px"
           class="fa-regular fa-user"
@@ -48,6 +44,13 @@
       <Dialog
         v-model:visible="visible2"
         modal
+        :pt="{
+          root: 'border-none',
+
+          mask: {
+            style: 'background-color: rgba(0, 0, 0, 0.7)',
+          },
+        }"
         style="
           background-color: white;
           box-shadow: 8px 8px 8px 4px rgba(0.2, 0, 0, 0.2);
@@ -69,7 +72,8 @@
         <button
           @click="
             visible3 = true;
-            visible2 = false;
+            visible2 = false; 
+         
           "
           style="
             width: 100%;
@@ -110,6 +114,13 @@
       <Dialog
         v-model:visible="visible3"
         modal
+        :pt="{
+          root: 'border-none',
+
+          mask: {
+            style: 'background-color: rgba(0, 0, 0, 0.7)',
+          },
+        }"
         style="
           width: 100%;
           background-color: white;
@@ -134,7 +145,6 @@
           @click="
             visible3 = true;
             visible2 = false;
-          
           "
           style="
             border: none;
@@ -146,23 +156,23 @@
         >
           نسيــت كلمــة المرور ؟
         </button>
-       
-       <router-link to="">
-        <button
-        @click="  show(), visible3 = false"
-          style="
-            width: 100%;
-            margin-top: 10px;
-            background-color: #a4ca72;
-            border: none;
-            color: white;
-            padding: 11px;
-            border-radius: 8px;
-          "
-        >
-          تسجيل الدخول
-        </button>
-      </router-link>
+
+        <router-link to="">
+          <button
+            @click="show(), (visible3 = false)"
+            style="
+              width: 100%;
+              margin-top: 10px;
+              background-color: #a4ca72;
+              border: none;
+              color: white;
+              padding: 11px;
+              border-radius: 8px;
+            "
+          >
+            تسجيل الدخول
+          </button>
+        </router-link>
         <div style="display: flex">
           <div style="margin: auto; margin-top: 15px; margin-bottom: 15px">
             ليس لديك حســـاب
@@ -201,13 +211,18 @@
         :position="position"
         :modal="true"
         :draggable="false"
+        :pt="{
+          root: 'border-none',
+
+          mask: {
+            style: 'background-color: rgba(0, 0, 0, 0.7)',
+          },
+        }"
         style="
           background-color: white;
           box-shadow: 8px 8px 8px rgba(0.2, 0, 0, 0.2);
           border-radius: 15px;
-
-          height: 850px;
-          height: 950px;
+          height: 900px;
         "
         class="p-3"
       >
@@ -275,7 +290,10 @@
         </router-link>
       </Dialog>
 
-      <router-link to="/FavoriteView" style="border-right: 1px solid black" href=""
+      <router-link
+        to="/FavoriteView"
+        style="border-right: 1px solid black"
+        href=""
         ><i class="fa-regular fa-heart"></i>قائمه المفضله</router-link
       >
     </div>
@@ -306,19 +324,15 @@ export default {
     ...mapState(useCounterStore, ["count", "items", "cartItem"]),
   },
   methods: {
-    show(){
-
-Swal.fire({
-position: "top-center",
-icon: "success",
-title: "لقد تم تسجيل دخولك بنجاح",
-showConfirmButton: false,
-timer: 1500
-});
-
-
-
-},
+    show() {
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "لقد تم تسجيل دخولك بنجاح",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    },
     calculateAllTotal() {
       const productTotal = this.items.reduce(
         (acc, item) => acc + parseFloat(item.originalPrice),
@@ -429,23 +443,21 @@ h4 {
   margin-top: 2%;
   padding-left: 350px;
 
-/* position:relative;
+  /* position:relative;
 top: 0;
 right: 6px;
   z-index: -99999999999999999; */
 }
 
-  .right button {
-    background-color: #a4ca72;
-    color: white;
-    margin-top: 25px;
-    width: 70px;
-    height: 70px;
-    border: none;
-    border-radius: 15px;
-
-    
-  }
+.right button {
+  background-color: #a4ca72;
+  color: white;
+  margin-top: 25px;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 15px;
+}
 
 .nav {
   display: flex;
